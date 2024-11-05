@@ -26,27 +26,29 @@ export default async function LearningList({ usrId }) {
         {learnings.map((learning, index) => (
           <Fragment key={learning.postingId}>
             <div className="frame-136">
-              <div className="frame-35">
+              <div className="frame-35-5">
                 <div className="frame-92">
-                  <div className="frame-3 background-white border-purple-01">
+                  <div className="frame-4-1 background-white border-purple-01">
                     <p className="caption-12 color-purple-01">마감 미설정</p>
                   </div>
                   <Link
                     className="link"
                     href={`/participation/${learning.postingId}`}
                   >
-                    <h2 className="h5-18 color-gray-02">{learning.title}</h2>
+                    <h2 className="h5-16 color-gray-02">{learning.title}</h2>
                   </Link>
                 </div>
               </div>
               <div className="frame-101-2">
-                <div className="frame-100 background-purple-04">
-                  <p className="learning-status color-purple-01">진행중</p>
+                <div className="frame-100-4 border-purple-01 background-purple-04">
+                  <p className="learning-status color-purple-01 caption-12">
+                    진행중
+                  </p>
                 </div>
               </div>
             </div>
             {index < learnings.length - 1 ? (
-              <div className="line border-gray-05" />
+              <div className="line-gray-05" />
             ) : null}
           </Fragment>
         ))}

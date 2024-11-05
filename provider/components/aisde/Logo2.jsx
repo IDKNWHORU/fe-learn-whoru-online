@@ -4,7 +4,7 @@ export default function Logo2() {
   return (
     <Image
       className="logo2"
-      src="/logo2.svg"
+      src="/logo2.png"
       alt="루디움 로고"
       width={52}
       height={24}

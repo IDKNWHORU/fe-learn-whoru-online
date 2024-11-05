@@ -75,7 +75,7 @@ async function MissionList() {
               </div>
             </div>
           </div>
-          <hr className="line border-gray-02" />
+          <hr className="line-gray-02" />
           {missions
             .sort((a, b) => {
               if (a.orderNum > b.orderNum) return 1;
@@ -91,7 +91,7 @@ async function MissionList() {
                     <div className="frame-92">
                       <div className="frame-3">
                         <Link
-                          className="h5-18 color-gray-02 link"
+                          className="h5-16 color-gray-02 link"
                           href={`/mission/${missionId}`}
                         >
                           {title}

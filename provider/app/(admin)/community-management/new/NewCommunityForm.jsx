@@ -14,7 +14,7 @@ const SubmitButton = ({ type }) => {
   const { pending } = useFormStatus();
   return (
     <button
-      className="button-L-2 background-purple-01 h5-18 color-white"
+      className="button-L-2 background-purple-01 h5-16 color-white"
       type="submit"
       disabled={pending}
     >
@@ -65,7 +65,7 @@ export default function NewCommunityForm({ type }) {
   return (
     <form className="frame-116" action={handleCreateContent}>
       <div className="input-2">
-        <label className="h5-18 color-gray-03" htmlFor="title">
+        <label className="h5-16 color-gray-03" htmlFor="title">
           제목
         </label>
         <input
@@ -78,7 +78,7 @@ export default function NewCommunityForm({ type }) {
         />
       </div>
       <div className="input-2">
-        <label className="h5-18 color-gray-03" htmlFor="banner">
+        <label className="h5-16 color-gray-03" htmlFor="banner">
           배너
         </label>
         {bannerUrl === "" ? null : (
@@ -101,7 +101,7 @@ export default function NewCommunityForm({ type }) {
         />
       </div>
       <div className="input-2">
-        <p className="h5-18 color-gray-03">내용</p>
+        <p className="h5-16 color-gray-03">내용</p>
         <div className="frame-102-4 background-white content-editor">
           <Editor editorRef={editorRef} content="" height="100%" />
         </div>

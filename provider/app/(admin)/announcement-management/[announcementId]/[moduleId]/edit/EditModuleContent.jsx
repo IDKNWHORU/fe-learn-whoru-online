@@ -14,7 +14,7 @@ const SubmitButton = () => {
   const { pending } = useFormStatus();
   return (
     <button
-      className="button-L-2 background-purple-01 h5-18 color-white"
+      className="button-L-2 background-purple-01 h5-16 color-white"
       type="submit"
       disabled={pending}
     >
@@ -61,7 +61,7 @@ export default function EditModuleContent({
   return (
     <form className="frame-116" action={handleSubmit}>
       <div className="input-2">
-        <label className="h5-18 color-gray-03" htmlFor="title">
+        <label className="h5-16 color-gray-03" htmlFor="title">
           제목
         </label>
         <input
@@ -74,7 +74,7 @@ export default function EditModuleContent({
         />
       </div>
       <div className="input-2">
-        <label className="h5-18 color-gray-03" htmlFor="rewardToken">
+        <label className="h5-16 color-gray-03" htmlFor="rewardToken">
           토큰
         </label>
         {coinList.length > 0 ? (
@@ -110,7 +110,7 @@ export default function EditModuleContent({
         )}
       </div>
       <div className="input-2">
-        <label className="h5-18 color-gray-03" htmlFor="rewardAmount">
+        <label className="h5-16 color-gray-03" htmlFor="rewardAmount">
           금액
         </label>
         <input
@@ -123,7 +123,7 @@ export default function EditModuleContent({
         />
       </div>
       <div className="input-2">
-        <p className="h5-18 color-gray-03">내용</p>
+        <p className="h5-16 color-gray-03">내용</p>
         <div className="frame-102-4 background-white content-editor">
           <Editor editorRef={editorRef} content={description} height="100%" />
         </div>

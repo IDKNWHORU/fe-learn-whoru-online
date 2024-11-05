@@ -15,7 +15,7 @@ const SubmitButton = () => {
 
   return (
     <button
-      className="button-L-2 background-purple-01 h5-18 color-white"
+      className="button-L-2 background-purple-01 h5-16 color-white"
       disabled={pending}
     >
       {pending ? "프로필 적용을 진행중입니다..." : "프로필 적용"}
@@ -67,10 +67,10 @@ export default function EditProfile({ profile }) {
       className="frame-34-10 background-white border-gray-06"
       action={handleUpdateProfile}
     >
-      <div className="frame-117-2">
-        <div className="frame-116-2">
+      <div className="frame-117">
+        <div className="frame-116">
           <div className="input-2">
-            <label className="h5-18 color-gray-03" htmlFor="avatar">
+            <label className="h5-16 color-gray-03" htmlFor="avatar">
               이미지
             </label>
             <div className="group-8">
@@ -94,7 +94,7 @@ export default function EditProfile({ profile }) {
             </div>
           </div>
           <div className="input-2">
-            <label className="h5-18 color-gray-03" htmlFor="nick">
+            <label className="h5-16 color-gray-03" htmlFor="nick">
               닉네임
             </label>
             <input
@@ -107,7 +107,7 @@ export default function EditProfile({ profile }) {
             />
           </div>
           <div className="input-2">
-            <label className="h5-18 color-gray-03" htmlFor="phone_number">
+            <label className="h5-16 color-gray-03" htmlFor="phone_number">
               핸드폰번호
             </label>
             <input
@@ -120,7 +120,7 @@ export default function EditProfile({ profile }) {
             />
           </div>
           <div className="input-2">
-            <label className="h5-18 color-gray-03">자기소개</label>
+            <label className="h5-16 color-gray-03">자기소개</label>
           </div>
           <div className="frame-102-4 background-white content-editor">
             <Editor
@@ -129,14 +129,14 @@ export default function EditProfile({ profile }) {
               height="100%"
             />
           </div>
-        </div>
-        <div className="flex-end">
-          <SubmitButton />
-        </div>
-        <div className="frame-119">
-          <Link className="link" href="/profile/delete">
-            <p className="p5-18 color-alert">회원 탈퇴 페이지로 이동</p>
-          </Link>
+          <div className="frame-157">
+            <SubmitButton />
+          </div>
+          <div className="frame-157">
+            <Link className="link" href="/profile/delete">
+              <p className="p5-18 color-alert">회원 탈퇴 페이지로 이동</p>
+            </Link>
+          </div>
         </div>
       </div>
     </form>

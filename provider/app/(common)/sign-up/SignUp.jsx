@@ -15,7 +15,7 @@ const SubmitButton = () => {
   const { pending } = useFormStatus();
   return (
     <button
-      className="button-L-2 background-purple-01 h5-18 color-white"
+      className="button-L-2 background-purple-01 h5-16 color-white"
       disabled={pending}
     >
       {pending ? "가입하는 중입니다..." : "가입하기"}
@@ -65,17 +65,14 @@ export default function SignUp() {
   };
 
   return (
-    <form
-      className="frame-34-10 background-white border-gray-06"
-      action={handleSignup}
-    >
-      <div className="frame-117-2">
-        <div className="frame-116-2">
+    <form className="frame-34-10" action={handleSignup}>
+      <div className="frame-117">
+        <div className="frame-116">
           <div className="frame-57">
             <h1 className="h4-20 color-black">회원가입</h1>
           </div>
           <div className="input-2">
-            <label className="h5-18 color-gray-03" htmlFor="avatar">
+            <label className="h5-16 color-gray-03" htmlFor="avatar">
               이미지
             </label>
             <div className="group-8">
@@ -99,7 +96,7 @@ export default function SignUp() {
             </div>
           </div>
           <div className="input-2">
-            <label className="h5-18 color-gray-03" htmlFor="nick">
+            <label className="h5-16 color-gray-03" htmlFor="nick">
               닉네임
             </label>
             <input
@@ -111,7 +108,7 @@ export default function SignUp() {
             />
           </div>
           <div className="input-2">
-            <label className="h5-18 color-gray-03" htmlFor="phone_number">
+            <label className="h5-16 color-gray-03" htmlFor="phone_number">
               핸드폰번호
             </label>
             <input
@@ -123,14 +120,14 @@ export default function SignUp() {
             />
           </div>
           <div className="input-2">
-            <label className="h5-18 color-gray-03">자기소개</label>
+            <label className="h5-16 color-gray-03">자기소개</label>
             <div className="frame-102-4 background-white content-editor signup-editor">
               <Editor editorRef={editorRef} height="100%" />
             </div>
           </div>
-        </div>
-        <div className={signupstyle["form-button-area"]}>
-          <SubmitButton />
+          <div className={signupstyle["form-button-area"]}>
+            <SubmitButton />
+          </div>
         </div>
       </div>
     </form>

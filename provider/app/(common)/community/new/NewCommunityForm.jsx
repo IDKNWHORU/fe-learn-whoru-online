@@ -16,7 +16,7 @@ const SubmitButton = () => {
 
   return (
     <button
-      className="button-L-2 background-purple-01 h5-18 color-white"
+      className="button-L-2 background-purple-01 h5-16 color-white"
       disabled={pending}
     >
       {pending ? "저장하는 중입니다..." : "저장하기"}
@@ -67,7 +67,7 @@ export default function NewCommunityForm() {
   return (
     <form className="frame-116" action={handleCreateContent}>
       <div className="input-2">
-        <label className="h5-18 color-gray-03" htmlFor="title">
+        <label className="h5-16 color-gray-03" htmlFor="title">
           제목
         </label>
         <input
@@ -80,7 +80,7 @@ export default function NewCommunityForm() {
         />
       </div>
       <div className="input-2">
-        <label className="h5-18 color-gray-03" htmlFor="type">
+        <label className="h5-16 color-gray-03" htmlFor="type">
           유형
         </label>
         <select
@@ -94,7 +94,7 @@ export default function NewCommunityForm() {
         </select>
       </div>
       <div className="input-2">
-        <label className="h5-18 color-gray-03" htmlFor="banner">
+        <label className="h5-16 color-gray-03" htmlFor="banner">
           배너
         </label>
         {bannerUrl === "" ? null : (
@@ -117,7 +117,7 @@ export default function NewCommunityForm() {
         />
       </div>
       <div className="input-2">
-        <p className="h5-18 color-gray-03">내용</p>
+        <p className="h5-16 color-gray-03">내용</p>
         <div className="frame-102-4 background-white content-editor">
           <Editor editorRef={editorRef} content="" height="100%" />
         </div>

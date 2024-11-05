@@ -71,7 +71,7 @@ async function ApplicationList({ announcementId, applications }) {
                     </div>
                   </div>
                 </div>
-                <div class="line border-gray-05" />
+                <div class="line-gray-05" />
                 <div class="frame-120">
                   <Viewer content={description} height="100%" />
                 </div>
@@ -79,7 +79,7 @@ async function ApplicationList({ announcementId, applications }) {
             </div>
             <div className="margin1" />
             {index < applications.length - 1 ? (
-              <div className="line border-gray-05" />
+              <div className="line-gray-05" />
             ) : null}
           </Fragment>
         )

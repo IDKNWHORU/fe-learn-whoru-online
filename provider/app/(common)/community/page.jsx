@@ -37,7 +37,7 @@ export default async function CommunityListPage() {
       <header className="nb">
         <BackButton />
         <Link className="frame-56 link" href="/community/new">
-          <Icon src="/icon_write.svg" alt="추가하기" width={24} height={24} />
+          <Icon src="/icon_write.png" alt="추가하기" width={24} height={24} />
           <p className="h4-20 color-purple-01">추가하기</p>
         </Link>
       </header>

@@ -64,7 +64,7 @@ export default async function DetailedAnnouncementPage({
           className="frame-56 link"
           href={`/announcement/${announcementId}/${moduleId}/apply?role=${APPLY_CATEGORY.PROVIDER}`}
         >
-          <Icon src="/icon_plus.svg" alt="추가하기" width={24} height={24} />
+          <Icon src="/icon_plus.png" alt="지원하기" width={24} height={24} />
           <p className="h4-20 color-purple-01">지원하기</p>
         </Link>
       </header>

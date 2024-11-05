@@ -101,7 +101,7 @@ async function WorkContentList({ workId }) {
             </div>
           </div>
           {index < workContentList.length - 1 ? (
-            <div className="line border-gray-06" />
+            <div className="line-gray-06" />
           ) : null}
         </Fragment>
       ))}
@@ -123,7 +123,7 @@ export default async function WorkPage({ params: { workId } }) {
             className="frame-56 background-white border-none link"
             href={`/work/${workId}/co-worker`}
           >
-            <Icon src="/icon_plus.svg" alt="제출하기" width={24} height={24} />
+            <Icon src="/icon_plus.png" alt="제출하기" width={24} height={24} />
             <p className="h4-20 color-purple-01">작업자 추가</p>
           </Link>
         ) : null}
@@ -139,7 +139,7 @@ export default async function WorkPage({ params: { workId } }) {
                 <h2 className="h4-20 color-black">{work.title}</h2>
               </div>
             </div>
-            <div className="line border-gray-05" />
+            <div className="line-gray-05" />
             <div className="frame-120">
               <Viewer content={work.description} height="100%" />
             </div>

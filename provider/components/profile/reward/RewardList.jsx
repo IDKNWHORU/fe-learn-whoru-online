@@ -48,13 +48,13 @@ async function getWork(workId) {
 async function Mission({ missionId }) {
   const mission = await getMission(missionId);
 
-  return <h5 className="h5-18 color-gray-02">{mission.title}</h5>;
+  return <h5 className="h5-16 color-gray-02">{mission.title}</h5>;
 }
 
 async function Work({ workId }) {
   const work = await getWork(workId);
 
-  return <h5 className="h5-18 color-gray-02">{work.title}</h5>;
+  return <h5 className="h5-16 color-gray-02">{work.title}</h5>;
 }
 
 export default async function RewardList() {
@@ -100,7 +100,7 @@ export default async function RewardList() {
                 </Link>
               </div>
               {index < rewards.length - 1 ? (
-                <div className="line border-gray-05" />
+                <div className="line-gray-05" />
               ) : null}
             </Fragment>
           )

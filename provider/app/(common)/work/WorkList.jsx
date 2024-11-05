@@ -65,9 +65,7 @@ export default async function WorkList() {
               <Worker workId={detailId} />
             </div>
           </div>
-          {index < works.length - 1 ? (
-            <div className="line border-gray-05" />
-          ) : null}
+          {index < works.length - 1 ? <div className="line-gray-05" /> : null}
         </Fragment>
       ))}
     </div>

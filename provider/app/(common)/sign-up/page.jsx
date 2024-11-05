@@ -24,8 +24,10 @@ export const metadata = {
 
 export default function SignUpPage() {
   return (
-    <div className="frame-93">
-      <SignUp />
+    <div className="wrapper">
+      <div className="frame-93">
+        <SignUp />
+      </div>
     </div>
   );
 }

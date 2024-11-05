@@ -1,6 +1,7 @@
 "use client";
 
 import { logout } from "@/app/actions/logout";
+import Image from "next/image";
 import { useRouter } from "next/navigation";
 
 export default function Logout() {
@@ -13,8 +14,13 @@ export default function Logout() {
 
   return (
     <form className="gnb-menu-2" action={handleLogout}>
-      <div className="icon-28"></div>
-      <button className="text-wrapper h4-20">로그아웃</button>
+      <Image
+        src="/icon_logout.png"
+        width={24}
+        height={24}
+        alt="로그아웃"
+      ></Image>
+      <button className="text-wrapper h4-20 logout">로그아웃</button>
     </form>
   );
 }

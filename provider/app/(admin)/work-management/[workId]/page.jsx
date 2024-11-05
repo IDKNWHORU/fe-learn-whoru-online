@@ -162,7 +162,7 @@ async function SubmittedWorkContentList({ workId }) {
             </div>
           </div>
           {index < workContents.length - 1 ? (
-            <div className="line border-gray-05" />
+            <div className="line-gray-05" />
           ) : null}
         </Fragment>
       ))}
@@ -194,7 +194,7 @@ export default async function WorkPage({ params: { workId } }) {
                 <Worker workId={workId} />
               </div>
             </div>
-            <div className="line border-gray-05" />
+            <div className="line-gray-05" />
             <div className="frame-120">
               <Viewer content={work.description} height="100%" />
             </div>

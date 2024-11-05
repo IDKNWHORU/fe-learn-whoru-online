@@ -40,7 +40,7 @@ export default async function ContentList() {
                 </Link>
                 <div className="frame-100-3">
                   <p className="caption-12 color-gray-04">
-                    작성 일시: {getTimeStamp(createAt)}
+                    작성일: {getTimeStamp(createAt)}
                   </p>
                 </div>
                 <div className="frame-100-3">

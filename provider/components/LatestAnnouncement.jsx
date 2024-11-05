@@ -1,6 +1,7 @@
 import Link from "next/link";
 import Icon from "./Icon";
 import fetchWithRetry from "@/functions/api";
+import Image from "next/image";
 
 async function getLatestAnnouncement() {
   const getLatestAnnouncementResponse = await fetchWithRetry(
@@ -18,7 +19,7 @@ export default async function LatestAnnouncement() {
   const latestAnnouncement = await getLatestAnnouncement();
 
   return (
-    <header className="latest-announcement-wrapper">
+    <header>
       <Link
         className="latest-announcement"
         href={
@@ -28,7 +29,7 @@ export default async function LatestAnnouncement() {
         }
       >
         <Icon
-          src="/icon_announce.svg"
+          src="/icon_announcement.png"
           alt="최신 공지사항 보러가기"
           width={24}
           height={24}
@@ -38,7 +39,12 @@ export default async function LatestAnnouncement() {
             ? "최신 공지 데이터가 없습니다."
             : latestAnnouncement.title}
         </h1>
-        <p className="latest-announcement-icon">N</p>
+        <Image
+          src="/icon_new.png"
+          width={24}
+          height={24}
+          alt={`${latestAnnouncement?.title} 보기`}
+        />
       </Link>
     </header>
   );

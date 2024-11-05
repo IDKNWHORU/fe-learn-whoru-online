@@ -99,7 +99,7 @@ export default async function MissionPage({
           href={`/participation/${participationId}/${curriculmId}/mission/${missionId}/submit`}
         >
           <Icon
-            src="/icon_flag_purple01.svg"
+            src="/icon_flag_purple01.png"
             alt="제출하기"
             width={24}
             height={24}
@@ -115,7 +115,7 @@ export default async function MissionPage({
                 <div className="frame-9">
                   <div className="frame-145">
                     <Icon
-                      src="/icon_flag.svg"
+                      src="/icon_flag.png"
                       alt="mission"
                       width={24}
                       height={24}

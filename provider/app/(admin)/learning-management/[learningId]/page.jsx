@@ -123,7 +123,7 @@ async function ContentList({ learningId, curriculumId }) {
             </div>
           </div>
           {index < contents.length - 1 ? (
-            <div className="line border-gray-05" />
+            <div className="line-gray-05" />
           ) : null}
         </Fragment>
       ))}
@@ -177,7 +177,7 @@ async function CurriculumList({ learningId }) {
             </div>
           </div>
           {index < curriculums.length - 1 ? (
-            <div className="line border-gray-05" />
+            <div className="line-gray-05" />
           ) : null}
         </Fragment>
       ))}
@@ -195,7 +195,7 @@ async function LearningContent({ learningId }) {
           <h4 className="h4-20 color-black">{title}</h4>
         </div>
       </div>
-      <div className="line border-gray-05" />
+      <div className="line-gray-05" />
       <div className="frame-120">
         <Viewer content={description} height="100%" />
       </div>
@@ -213,7 +213,7 @@ export default async function LearningPage({ params: { learningId } }) {
           href={`/learning-management/${learningId}/edit`}
         >
           <Icon
-            src="/icon_write.svg"
+            src="/icon_write.png"
             alt="학습 수정하기"
             width={24}
             height={24}

@@ -1,6 +1,7 @@
 .card_profile_wallet {
   display: flex;
   flex-direction: row;
+  flex-wrap: wrap;
   align-items: flex-start;
   padding: 0px;
   gap: 24px;
@@ -8,41 +9,31 @@
 
 .card_profile {
   box-sizing: border-box;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  padding: 24px;
-  gap: 10px;
   background: var(--white);
   border: 1px solid var(--gray06);
   border-radius: 20px;
+  padding: 24px;
+  flex: 1;
 }
 
 .profile {
   display: flex;
   flex-direction: column;
-  justify-content: center;
-  align-items: flex-start;
-  padding: 0px;
   gap: 8px;
-  width: 496.5px;
 }
 
 .profile_name {
   display: flex;
-  flex-direction: row;
   align-items: center;
-  padding: 0px;
   gap: 24px;
 }
 
-.profile_pic {
-  width: 60px;
-  height: 60px;
-}
-
 .profile_nick {
+  max-width: 230px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  margin: 0;
   font-family: "Pretendard Variable";
   font-style: normal;
   font-weight: 300;
@@ -53,41 +44,27 @@
 
 .profile_text_setting_button {
   display: flex;
-  flex-direction: row;
-  align-items: center;
-  padding: 0px;
   gap: 24px;
-  align-self: stretch;
+  justify-content: space-between;
+  align-items: center;
 }
 
 .profile_text {
+  width: calc(100% - 250px);
   display: flex;
   flex-direction: column;
-  align-items: flex-start;
-  padding: 0px 0px 0px 84px;
   gap: 4px;
-  width: -webkit-fill-available;
-}
-
-.profile_text > div > div > p {
-  margin: 0;
+  padding-left: 82px;
 }
 
 .phone_number {
   display: flex;
-  flex-direction: row;
   align-items: center;
-  padding: 0px;
   gap: 8px;
 }
 
-.icon {
-  position: relative;
-  width: 24px;
-  height: 24px;
-}
-
 .p1_16 {
+  width: 114px;
   font-family: "Pretendard Variable";
   font-style: normal;
   font-weight: 400;
@@ -95,15 +72,34 @@
   line-height: 26px;
   letter-spacing: -0.005em;
   color: var(--gray03);
+  margin: 0;
 }
 
 .setting_button {
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
-  align-items: center;
+  width: 48px;
+  height: 48px;
+  display: block;
+  box-sizing: border-box;
   padding: 12px;
-  gap: 10px;
   background: var(--purple01);
   border-radius: 40px;
+}
+
+@media (max-width: 450px) {
+  .card_profile {
+    width: calc(100vw - 48px);
+    padding: 24px 24px;
+  }
+
+  .profile_text {
+    width: calc(100vw - 250px);
+  }
+
+  .profile_text_setting_button {
+    justify-content: space-between;
+  }
+
+  .profile_nick {
+    max-width: calc(100vw - 172px);
+  }
 }

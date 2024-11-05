@@ -30,7 +30,7 @@ export default async function AnnouncementList() {
             </div>
           </div>
           {index < announcements.length - 1 ? (
-            <div className="line border-gray-05" />
+            <div className="line-gray-05" />
           ) : null}
         </Fragment>
       ))}

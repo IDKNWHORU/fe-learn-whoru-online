@@ -34,26 +34,33 @@ const Content = async ({ communityId }) => {
   return (
     <div className="frame-149">
       <div className="frame background-white border-gray-06">
-        <div className="frame-101">
+        <div className="frame-101-3">
           <div className="frame-9">
             <div className="frame-145">
               <h4 className="h4-20 color-black">
                 [{ko_kr[content.type]}] {content.title}
               </h4>
             </div>
-            <div className="flex-end">
-              <PinContentButton
-                communityId={communityId}
-                isPinned={content.pinned}
-              />
-              <div className="margin1" />
-              <DeleteContentButton communityId={communityId} />
+            <div className="frame-9-3">
+              <div className="content-info">
+                <p className="caption-12 color-gray-04">
+                  작성자: <UserNick usrId={content.usrId} />
+                </p>
+                <p className="caption-12">
+                  {getTimeStamp(content.createAt)
+                    .substring(0, 10)
+                    .replaceAll("-", ".")}
+                </p>
+              </div>
+              <div className="content-buttons">
+                <PinContentButton
+                  communityId={communityId}
+                  isPinned={content.pinned}
+                />
+                <DeleteContentButton communityId={communityId} />
+              </div>
             </div>
           </div>
-          <p className="caption-12">
-            작성자: <UserNick usrId={content.usrId} />, 생성일시:{" "}
-            {getTimeStamp(content.createAt)}
-          </p>
         </div>
       </div>
       <div className="frame background-white border-gray-06">
@@ -74,7 +81,7 @@ export default async function ContentPage({ params: { communityId } }) {
           className="frame-56 link"
           href={`/community-management/${communityId}/edit`}
         >
-          <Icon src="/icon_write.svg" alt="수정하기" width={24} height={24} />
+          <Icon src="/icon_write.png" alt="수정하기" width={24} height={24} />
           <p className="h4-20 color-purple-01">수정하기</p>
         </Link>
       </header>

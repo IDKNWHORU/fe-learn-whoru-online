@@ -12,7 +12,7 @@ const SubmitButton = () => {
   const { pending } = useFormStatus();
 
   return (
-    <button className="button1 h5-18 button-L" type="submit" disabled={pending}>
+    <button className="button1 h5-16 button-L" type="submit" disabled={pending}>
       {pending ? "제출하는 중입니다..." : "제출하기"}
     </button>
   );

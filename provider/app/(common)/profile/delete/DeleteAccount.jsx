@@ -9,7 +9,7 @@ const SubmitButton = () => {
 
   return (
     <button
-      className="button-L-2 background-purple-01 h5-18 color-white"
+      className="button-L-2 background-purple-01 h5-16 color-white"
       disabled={pending}
     >
       {pending ? "탈퇴 처리중입니다..." : "탈퇴신청"}
@@ -34,7 +34,7 @@ export default function DeleteAccount() {
 
   return (
     <form action={handleDeleteAccount}>
-      <div className="frame-101">
+      <div className="frame-157">
         <SubmitButton />
       </div>
     </form>

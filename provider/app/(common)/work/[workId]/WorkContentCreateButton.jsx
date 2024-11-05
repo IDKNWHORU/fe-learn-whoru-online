@@ -9,12 +9,12 @@ const SubmitButton = () => {
   return (
     <button className="button-M" type="submit" disabled={pending}>
       <Icon
-        src="/icon_plus_white.svg"
+        src="/icon_plus_white.png"
         alt="작업물 추가"
         width={24}
         height={24}
       />
-      <p className="h5-18 color-white">
+      <p className="h5-16 color-white">
         {pending ? "추가중..." : "작업물 추가"}
       </p>
     </button>

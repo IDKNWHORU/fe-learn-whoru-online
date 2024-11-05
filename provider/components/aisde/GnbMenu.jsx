@@ -12,16 +12,14 @@ export default function GnbMenu({
 }) {
   return (
     <Link className="gnb-menu-2" href={href}>
-      <div className="icon-28">
-        <Image
-          className={iconClass}
-          src={src}
-          alt={alt}
-          width={width}
-          height={height}
-          priority
-        />
-      </div>
+      <Image
+        className={iconClass}
+        src={src}
+        alt={alt}
+        width={width}
+        height={height}
+        priority
+      />
       <p className="text-wrapper h4-20">{text}</p>
     </Link>
   );

@@ -125,19 +125,19 @@ async function MissionSubmit({ learningId, curriculumId, missionId }) {
 
   if (missionSubmit === null)
     return (
-      <div className="frame-97 background-gray-06 color-gray-04 border-gray-04">
+      <div className="frame-97 background-gray-06 color-gray-04 border-gray-04 caption-12">
         {ko_kr.NO_COMPLETE}
       </div>
     );
   if (missionSubmit.status === "SUBMIT")
     return (
-      <div className="frame-97 background-purple-04 color-purple-01">
+      <div className="frame-97 background-purple-04 color-purple-01 caption-12">
         {ko_kr[missionSubmit.status]}
       </div>
     );
 
   return (
-    <div className="frame-97 background-purple-01 color-white">
+    <div className="frame-97 background-purple-01 color-white caption-12">
       {ko_kr[missionSubmit.status]}
     </div>
   );
@@ -152,12 +152,12 @@ async function ArticleSubmit({ learningId, curriculumId, articleId }) {
 
   if (articleSubmit === null)
     return (
-      <div className="frame-97 background-gray-06 color-gray-04 border-gray-04">
+      <div className="frame-97 background-gray-06 color-gray-04 border-gray-04 caption-12">
         {ko_kr.NO_COMPLETE}
       </div>
     );
   return (
-    <div className="frame-97 background-purple-01 color-white">
+    <div className="frame-97 background-purple-01 color-white caption-12">
       {ko_kr[articleSubmit.status]}
     </div>
   );
@@ -171,7 +171,7 @@ async function CurriculumContentList({ learningId, curriculumId }) {
   return (
     <>
       {contents.map((content) => (
-        <section className="frame-118" key={content.id}>
+        <section className="frame-118 curriculum-list" key={content.id}>
           <div className="frame-34-3">
             <div className="frame-9-2">
               <div className="frame-93-2">
@@ -231,7 +231,7 @@ async function CurriculumList({ learningId }) {
           <h2 className="h4-20 color-black">커리큘럼 목록</h2>
         </div>
       </div>
-      <div className="line border-gray-05" />
+      <div className="line-gray-05" />
       {curriculums.map((curriculum) => (
         <Fragment key={curriculum.curriculumId}>
           <div className="frame-119">
@@ -247,7 +247,7 @@ async function CurriculumList({ learningId }) {
               </div>
             </div>
           </div>
-          <div className="line border-gray-02" />
+          <div className="line-gray-02" />
           <CurriculumContentList
             learningId={learningId}
             curriculumId={curriculum.curriculumId}
@@ -273,7 +273,7 @@ async function LearningContent({ learningId }) {
               <h2 className="h4-20 color-black">{learning.title}</h2>
             </div>
           </div>
-          <div className="line border-gray-05" />
+          <div className="line-gray-05" />
           <section className="frame-120">
             <Viewer content={learning.description} height="100%" />
           </section>

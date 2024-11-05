@@ -8,7 +8,7 @@ const SubmitButton = () => {
 
   return (
     <button
-      className="button-L-2 background-purple-01 h5-18 color-white"
+      className="button-L-2 background-purple-01 h5-16 color-white"
       type="submit"
       disabled={pending}
     >
@@ -35,7 +35,7 @@ export default function CurriculumEditor({
   return (
     <form className="frame-116" action={handleEditWorkContent}>
       <div className="input-2">
-        <label className="h5-18 color-gray-03" htmlFor="title">
+        <label className="h5-16 color-gray-03" htmlFor="title">
           제목
         </label>
         <input
@@ -48,7 +48,7 @@ export default function CurriculumEditor({
         />
       </div>
       <div className="input-2">
-        <label className="h5-18 color-gray-03" htmlFor="orderNum">
+        <label className="h5-16 color-gray-03" htmlFor="orderNum">
           순번
         </label>
         <input

@@ -76,7 +76,7 @@ async function MissionComment({ missionId, usrId }) {
             <div className="frame-140">
               <div className="frame-10">
                 <div className="frame-141">
-                  <h3 className="h5-18">
+                  <h3 className="h5-16">
                     <UserNick usrId={comment.commentor} />
                   </h3>
                   <div className="frame-9-3">
@@ -92,7 +92,7 @@ async function MissionComment({ missionId, usrId }) {
             </div>
           </section>
           {index < comments.length - 1 ? (
-            <div className="line border-gray-05" />
+            <div className="line-gray-05" />
           ) : null}
         </Fragment>
       ))}
@@ -124,7 +124,7 @@ export default async function MissionSubmitPage({
             </div>
             <div className="frame background-white border-gray-06 mission-comment mission-comment-editor">
               <div className="frame-148">
-                <h2 className="h5-18">코멘트 작성하기</h2>
+                <h2 className="h5-16">코멘트 작성하기</h2>
               </div>
               <MissionSubmitCommentEditor missionId={missionId} usrId={usrId} />
             </div>

@@ -103,7 +103,7 @@ async function Article({ learningId, curriculumId, article }) {
             <div className="frame-9">
               <div className="frame-145">
                 <Icon
-                  src="/icon_note.svg"
+                  src="/icon_note.png"
                   alt="아티클"
                   width={24}
                   height={24}

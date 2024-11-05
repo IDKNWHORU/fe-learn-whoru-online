@@ -23,7 +23,7 @@ export default async function Mission({ usrId }) {
       {missions.map((mission, index) => (
         <Fragment key={mission.missionId}>
           <div className="frame-40">
-            <div className="frame-3 background-white border-purple-01">
+            <div className="frame-4-1 background-white border-purple-01">
               <p className="caption-12 color-purple-01">
                 {ko_kr[mission.status]}
               </p>
@@ -36,7 +36,7 @@ export default async function Mission({ usrId }) {
             </Link>
           </div>
           {index < missions.length - 1 ? (
-            <div className="line border-gray-05" />
+            <div className="line-gray-05" />
           ) : null}
         </Fragment>
       ))}

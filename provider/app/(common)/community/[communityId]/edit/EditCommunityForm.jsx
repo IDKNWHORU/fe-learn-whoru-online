@@ -14,7 +14,7 @@ const SubmitButton = () => {
 
   return (
     <button
-      className="button-L-2 background-purple-01 h5-18 color-white"
+      className="button-L-2 background-purple-01 h5-16 color-white"
       type="submit"
       disabled={pending}
     >
@@ -66,7 +66,7 @@ export default function EditCommunityForm({ content }) {
   return (
     <form className="frame-116" action={handleUpdateContent}>
       <div className="input-2">
-        <label htmlFor="title" className="h5-18 color-gray-03">
+        <label htmlFor="title" className="h5-16 color-gray-03">
           제목
         </label>
         <input
@@ -80,7 +80,7 @@ export default function EditCommunityForm({ content }) {
         />
       </div>
       <div className="input-2">
-        <label htmlFor="banner" className="h5-18 color-gray-03">
+        <label htmlFor="banner" className="h5-16 color-gray-03">
           배너
         </label>
         {bannerUrl === "" ? null : (
@@ -103,7 +103,7 @@ export default function EditCommunityForm({ content }) {
         />
       </div>
       <div className="input-2">
-        <p className="h5-18 color-gray-03">내용</p>
+        <p className="h5-16 color-gray-03">내용</p>
         <div className="frame-102-4 background-white content-editor">
           <Editor
             editorRef={editorRef}

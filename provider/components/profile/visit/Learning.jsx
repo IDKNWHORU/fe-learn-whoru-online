@@ -28,7 +28,7 @@ export default async function Learning({ usrId, nick }) {
             <div className="arrow-right">
               <div className="frame-78">
                 <Icon
-                  src="/icon_arrow_right.svg"
+                  src="/icon_arrow_right.png"
                   alt="more"
                   width={12}
                   height={12}
@@ -43,8 +43,8 @@ export default async function Learning({ usrId, nick }) {
           {learnings.map((learning, index) => (
             <Fragment key={learning.postingId}>
               <div className="frame-35-4">
-                <div className="frame-92">
-                  <div className="frame-3 border-purple-01">
+                <div className="frame-92-2">
+                  <div className="frame-4-1 background-white border-purple-01">
                     <p className="caption-12 color-purple-01">마감 미설정</p>
                   </div>
                   <Link
@@ -56,7 +56,7 @@ export default async function Learning({ usrId, nick }) {
                 </div>
               </div>
               {index < learnings.length - 1 ? (
-                <div className="line border-gray-05" />
+                <div className="line-gray-05" />
               ) : null}
             </Fragment>
           ))}

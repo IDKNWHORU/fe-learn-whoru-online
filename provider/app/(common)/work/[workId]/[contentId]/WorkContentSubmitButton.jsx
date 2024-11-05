@@ -14,7 +14,7 @@ const SubmitButton = () => {
       disabled={pending}
     >
       <Icon
-        src="/icon_flag_purple01.svg"
+        src="/icon_flag_purple01.png"
         alt="제출하기"
         width={24}
         height={24}

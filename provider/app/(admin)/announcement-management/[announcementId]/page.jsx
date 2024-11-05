@@ -93,13 +93,12 @@ async function DetailedAnnouncementList({ announcementId }) {
             <div className="frame-159">
               <Worker detailId={detailId} />
             </div>
-            <div className="vertical-center">
+            <div className="announcement-buttons">
               <Link
                 href={`/announcement-management/${announcementId}/${detailId}/application?role=${APPLY_CATEGORY.PROVIDER}`}
               >
                 지원자 보기
               </Link>
-              <div className="margin1"></div>
               <Link
                 href={`/announcement-management/${announcementId}/${detailId}/application-template?role=${APPLY_CATEGORY.PROVIDER}`}
               >
@@ -108,7 +107,7 @@ async function DetailedAnnouncementList({ announcementId }) {
             </div>
           </div>
           {index < detailedAnnouncements.length - 1 ? (
-            <div className="line border-gray-05" />
+            <div className="line-gray-05" />
           ) : null}
         </Fragment>
       ))}
@@ -128,7 +127,7 @@ export default async function AnnouncementPage({ params: { announcementId } }) {
           href={`/announcement-management/${announcementId}/edit`}
         >
           <Icon
-            src="/icon_write.svg"
+            src="/icon_write.png"
             alt="공고 수정하기"
             width={24}
             height={24}
@@ -151,7 +150,7 @@ export default async function AnnouncementPage({ params: { announcementId } }) {
                 <h4 className="h4-20 color-black">{announcement.title}</h4>
               </div>
             </div>
-            <div className="line border-gray-05" />
+            <div className="line-gray-05" />
             <div className="frame-120">
               <Viewer content={announcement.description} height="100%" />
             </div>

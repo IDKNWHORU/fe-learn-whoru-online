@@ -39,7 +39,7 @@ async function AnnouncementList() {
             </div>
           </div>
           {index < announcements.length - 1 ? (
-            <div className="line border-gray-05" />
+            <div className="line-gray-05" />
           ) : null}
         </Fragment>
       ))}
@@ -57,7 +57,7 @@ export default async function AnnouncementPage() {
           href="/announcement-management/new"
         >
           <Icon
-            src="/icon_plus.svg"
+            src="/icon_plus.png"
             alt="공고 추가하기"
             width={24}
             height={24}

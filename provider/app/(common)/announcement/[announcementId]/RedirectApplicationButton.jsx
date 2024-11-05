@@ -23,7 +23,7 @@ export default function RedirectApplicationButton({
       onClick={handleRedirectApplication}
       disabled={isClosed}
     >
-      <h4 className="h5-18 color-white">
+      <h4 className="h5-16 color-white">
         {isClosed ? "마감되었습니다" : "지원하기"}
       </h4>
     </button>

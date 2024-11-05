@@ -44,7 +44,7 @@ async function WorkContentCommentList({ workId, contentId }) {
               <div className="frame-140">
                 <div className="frame-10">
                   <div className="frame-141">
-                    <h3 className="h5-18">
+                    <h3 className="h5-16">
                       <UserNick usrId={usrId} />
                     </h3>
                     <div className="frame-9-3">
@@ -58,7 +58,7 @@ async function WorkContentCommentList({ workId, contentId }) {
               </div>
             </div>
             {index < comments.length - 1 ? (
-              <div className="line border-gray-05" />
+              <div className="line-gray-05" />
             ) : null}
           </Fragment>
         )
@@ -73,7 +73,7 @@ async function WorkContentViewer({ workId, contentId }) {
   return (
     <div className="frame-116">
       <div className="input-2">
-        <p className="h5-18 color-gray-03" htmlFor="title">
+        <p className="h5-16 color-gray-03" htmlFor="title">
           제목
         </p>
         <input
@@ -87,7 +87,7 @@ async function WorkContentViewer({ workId, contentId }) {
         />
       </div>
       <div className="input-2">
-        <p className="h5-18 color-gray-03" htmlFor="title">
+        <p className="h5-16 color-gray-03" htmlFor="title">
           내용
         </p>
         <div className="frame-120 work-content-viewer">
@@ -133,7 +133,7 @@ export default async function WorkContentPage({
             </div>
             <div className="frame background-white border-gray-06 comment comment-editor">
               <div className="frame-148">
-                <h2 className="h5-18">코멘트 작성하기</h2>
+                <h2 className="h5-16">코멘트 작성하기</h2>
               </div>
               <WorkContentCommentEditor
                 workId={workId}

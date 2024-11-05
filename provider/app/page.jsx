@@ -63,10 +63,10 @@ async function AnnouncementList() {
           <p className="article-list-more-text p1-18">모두 보기</p>
           <div className="article-list-more-icon">
             <Icon
-              src="/icon_arrow_right.svg"
+              src="/icon_arrow_right.png"
               alt="모든 공고 목록 보기"
-              width={12}
-              height={12}
+              width={24}
+              height={24}
             />
           </div>
         </Link>
@@ -87,10 +87,11 @@ async function ParticipationList() {
           <p className="article-list-more-text p1-18">모두 보기</p>
           <div className="article-list-more-icon">
             <Icon
-              src="/icon_arrow_right.svg"
+              src="/icon_arrow_right.png"
               alt="모든 학습 목록 보기"
-              width={12}
-              height={12}
+              width={24}
+              height={24}
+              quality={100}
             />
           </div>
         </Link>
@@ -131,13 +132,13 @@ async function LatestBanner() {
 
 async function Content() {
   return (
-    <article className="home-content">
+    <section className="home-content">
       {/* <LatestBanner /> */}
       <div className="content-article">
         <AnnouncementList />
         <ParticipationList />
       </div>
-    </article>
+    </section>
   );
 }
 

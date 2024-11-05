@@ -23,127 +23,131 @@ export default async function Navigation() {
 
   return (
     <aside className="aside">
-      <Logo1 />
-      <nav className="gnb">
-        {userRight == null ? (
+      <header className="header">
+        <Logo1 />
+        <nav className="gnb">
+          {userRight == null ? (
+            <GnbMenu
+              href={`https://accounts.google.com/o/oauth2/v2/auth?client_id=${CLIENT_ID}&redirect_uri=${REDIRECT_URI}&response_type=${RESPONSE_TYPE}&scope=${SCOPE}&access_type=offline&prompt=consent`}
+              iconClass="icon-profile"
+              src="/icon_gnb_profile.png"
+              alt="로그인 페이지로 이동하기"
+              width={24}
+              height={24}
+              text="로그인"
+            />
+          ) : (
+            <>
+              <Logout />
+              <GnbMenu
+                href="/profile"
+                iconClass="icon-profile"
+                src="/icon_gnb_profile.png"
+                alt="프로필 페이지로 이동하기"
+                width={24}
+                height={24}
+                text="프로필"
+              />
+            </>
+          )}
           <GnbMenu
-            href={`https://accounts.google.com/o/oauth2/v2/auth?client_id=${CLIENT_ID}&redirect_uri=${REDIRECT_URI}&response_type=${RESPONSE_TYPE}&scope=${SCOPE}&access_type=offline&prompt=consent`}
-            iconClass="icon-profile"
-            src="/icon_profile.svg"
-            alt="로그인 페이지로 이동하기"
-            width={17.323}
-            height={17.323}
-            text="로그인"
+            href="/announcement"
+            iconClass="icon-announcement"
+            src="/icon_gnb_mission.png"
+            alt="공고 지원 페이지로 이동하기"
+            width={24}
+            height={24}
+            text="공고 지원"
           />
-        ) : (
-          <>
-            <Logout />
-            <GnbMenu
-              href="/profile"
-              iconClass="icon-profile"
-              src="/icon_profile.svg"
-              alt="프로필 페이지로 이동하기"
-              width={17.323}
-              height={17.323}
-              text="프로필"
-            />
-          </>
-        )}
-        <GnbMenu
-          href="/announcement"
-          iconClass="icon-announcement"
-          src="/icon_announcement.svg"
-          alt="공고 지원 페이지로 이동하기"
-          width={17.2}
-          height={20.62}
-          text="공고 지원"
-        />
-        <GnbMenu
-          href="/work"
-          src="/icon_note.svg"
-          alt="작업 수행 페이지로 이동하기"
-          width={24}
-          height={24}
-          text="작업 수행"
-        />
-        <GnbMenu
-          href="/participation"
-          src="/icon_learning.svg"
-          alt="학습 참여 페이지로 이동하기"
-          width={24}
-          height={24}
-          text="학습 참여"
-        />
-        <GnbMenu
-          href="/community"
-          src="/icon_community.svg"
-          alt="커뮤니티 페이지로 이동하기"
-          width={24}
-          height={24}
-          text="커뮤니티"
-        />
-        {prv ? (
-          <div>
-            <div className="line border-gray-05" />
-            <GnbMenu
-              href="/mission"
-              src="/icon_note.svg"
-              alt="미션 관리 페이지로 이동하기"
-              width={24}
-              height={24}
-              text="미션 관리"
-            />
-          </div>
-        ) : null}
-        {adm ? (
-          <div>
-            <div className="line border-gray-05" />
-            <GnbMenu
-              href="/announcement-management"
-              iconClass="icon-announcement"
-              src="/icon_announcement.svg"
-              alt="공고 관리 페이지로 이동하기"
-              width={17.2}
-              height={20.62}
-              text="공고 관리"
-            />
-            <GnbMenu
-              href="/work-management"
-              src="/icon_note.svg"
-              alt="작업 관리 페이지로 이동하기"
-              width={24}
-              height={24}
-              text="작업 관리"
-            />
-            <GnbMenu
-              href="/learning-management"
-              src="/icon_learning.svg"
-              alt="학습 관리 페이지로 이동하기"
-              width={24}
-              height={24}
-              text="학습 관리"
-            />
-            <GnbMenu
-              href="/community-management"
-              src="/icon_community.svg"
-              alt="커뮤니티 관리 페이지로 이동하기"
-              width={24}
-              height={24}
-              text="커뮤니티 관리"
-            />
-            <GnbMenu
-              href="/user-management"
-              iconClass="icon-profile"
-              src="/icon_profile.svg"
-              alt="사용자 관리 페이지로 이동하기"
-              width={17.323}
-              height={17.323}
-              text="사용자 관리"
-            />
-          </div>
-        ) : null}
-      </nav>
-      {adm ? null : <Footer />}
+          <GnbMenu
+            href="/work"
+            src="/icon_gnb_work.png"
+            alt="작업 수행 페이지로 이동하기"
+            width={24}
+            height={24}
+            text="작업 수행"
+          />
+          <GnbMenu
+            href="/participation"
+            src="/icon_gnb_learning.png"
+            alt="학습 참여 페이지로 이동하기"
+            width={24}
+            height={24}
+            text="학습 참여"
+          />
+          <GnbMenu
+            href="/community"
+            src="/icon_gnb_community.png"
+            alt="커뮤니티 페이지로 이동하기"
+            width={24}
+            height={24}
+            text="커뮤니티"
+          />
+          {prv ? (
+            <details>
+              <summary className="gnb-menu-wrapper">검증자</summary>
+              <div className="line-gray-05" />
+              <GnbMenu
+                href="/mission"
+                src="/icon_gnb_work.png"
+                alt="미션 관리 페이지로 이동하기"
+                width={24}
+                height={24}
+                text="미션 관리"
+              />
+            </details>
+          ) : null}
+          {adm ? (
+            <details>
+              <summary className="gnb-menu-wrapper">관리자</summary>
+              <div className="line-gray-05" />
+              <GnbMenu
+                href="/announcement-management"
+                iconClass="icon-announcement"
+                src="/icon_gnb_mission.png"
+                alt="공고 관리 페이지로 이동하기"
+                width={24}
+                height={24}
+                text="공고 관리"
+              />
+              <GnbMenu
+                href="/work-management"
+                src="/icon_gnb_work.png"
+                alt="작업 관리 페이지로 이동하기"
+                width={24}
+                height={24}
+                text="작업 관리"
+              />
+              <GnbMenu
+                href="/learning-management"
+                src="/icon_gnb_learning.png"
+                alt="학습 관리 페이지로 이동하기"
+                width={24}
+                height={24}
+                text="학습 관리"
+              />
+              <GnbMenu
+                href="/community-management"
+                src="/icon_gnb_community.png"
+                alt="커뮤니티 관리 페이지로 이동하기"
+                width={24}
+                height={24}
+                text="커뮤니티 관리"
+              />
+              <GnbMenu
+                href="/user-management"
+                iconClass="icon-profile"
+                src="/icon_gnb_profile.png"
+                alt="사용자 관리 페이지로 이동하기"
+                width={24}
+                height={24}
+                text="사용자 관리"
+              />
+            </details>
+          ) : null}
+        </nav>
+      </header>
+      <Footer />
     </aside>
   );
 }

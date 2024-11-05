@@ -56,33 +56,33 @@ export default async function LearningList() {
         <Fragment key={postingId}>
           <div className="frame-136">
             <div className="frame-35">
-              <h3 className="frame-92">
+              <div className="frame-92">
                 <div className="frame-3 background-white border-purple-01 ">
                   <p className="caption-12 color-purple-01">수강 마감 미설정</p>
                 </div>
                 <Link
-                  className="h5-18 color-gray-02 link"
+                  className="h5-16 color-gray-02 link"
                   href={`/participation/${postingId}`}
                 >
                   {title}
                 </Link>
-              </h3>
+              </div>
             </div>
             <div className="frame-102">
               {participations.some(
                 (participation) => participation.postingId === postingId
               ) ? (
-                <div className="frame-97 background-purple-04 color-purple-01">
+                <div className="frame-97 background-purple-04 color-purple-01 border-purple-01 caption-12">
                   진행중
                 </div>
               ) : (
-                <div className="frame-100 background-gray-06 color-gray-04 border-gray-04">
+                <div className="frame-100 background-gray-06 color-gray-04 border-gray-04 caption-12">
                   미진행
                 </div>
               )}
             </div>
           </div>
-          <div className="line border-gray-05" />
+          <div className="line-gray-05" />
         </Fragment>
       ))}
     </>

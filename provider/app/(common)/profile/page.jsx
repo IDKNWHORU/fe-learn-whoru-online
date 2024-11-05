@@ -66,13 +66,13 @@ export default async function ProfilePage() {
           <div className="frame-42">
             <div className="frame-34-6 background-white border-gray-06">
               <div className="frame-35-2">
-                <h1 className="h4-20 color-black">나의 지원서</h1>
+                <h4 className="h4-20 color-black">나의 지원서</h4>
                 {/* <Link className="frame-56-2 link" href="/">
                   <p className="more color-gray-04">모두 보기</p>
                   <div className="arrow-right">
                     <div className="frame-78">
                       <Icon
-                        src="/icon_arrow_right.svg"
+                        src="/icon_arrow_right.png"
                         alt="more"
                         width={12}
                         height={12}
@@ -87,19 +87,15 @@ export default async function ProfilePage() {
             {/* </div> */}
             <div className="frame-34-6 background-white border-gray-06">
               <div className="frame-35-2">
-                <h1 className="h4-20 color-black">나의 작업</h1>
+                <h4 className="h4-20 color-black">나의 작업</h4>
                 <Link className="frame-56-2 link" href="/profile/work">
                   <p className="more color-gray-04">모두 보기</p>
-                  <div className="arrow-right">
-                    <div className="frame-78">
-                      <Icon
-                        src="/icon_arrow_right.svg"
-                        alt="more"
-                        width={12}
-                        height={12}
-                      />
-                    </div>
-                  </div>
+                  <Icon
+                    src="/icon_arrow_right.png"
+                    alt="more"
+                    width={24}
+                    height={24}
+                  />
                 </Link>
               </div>
               <Work usrId={profile.id} />
@@ -110,23 +106,19 @@ export default async function ProfilePage() {
             {/* <div className="frame-92"> */}
             {/* <div className="frame-34-7 background-white border-gray-06"> */}
             <div className="frame-34-6 background-white border-gray-06">
-              <div className="frame-35-3">
-                <div className="frame-9">
-                  <h1 className="h4-20 color-black">나의 학습</h1>
-                  <Link className="frame-56-2 link" href="/profile/learning">
-                    <p className="more color-gray-04">모두 보기</p>
-                    <div className="arrow-right">
-                      <div className="frame-78">
-                        <Icon
-                          src="/icon_arrow_right.svg"
-                          alt="more"
-                          width={12}
-                          height={12}
-                        />
-                      </div>
-                    </div>
-                  </Link>
-                </div>
+              <div className="frame-35-2">
+                <h4 className="h4-20 color-black">나의 학습</h4>
+                {/* <div className="frame-9"> */}
+                <Link className="frame-56-2 link" href="/profile/learning">
+                  <p className="more color-gray-04">모두 보기</p>
+                  <Icon
+                    src="/icon_arrow_right.png"
+                    alt="more"
+                    width={24}
+                    height={24}
+                  />
+                </Link>
+                {/* </div> */}
               </div>
               {/* <div className="frame-9-2"> */}
               {/* 전체 달성률 그래프 */}
@@ -144,19 +136,15 @@ export default async function ProfilePage() {
             <div className="frame-34-6 background-white border-gray-06">
               {/* <div className="frame-34-7 background-white border-gray-06"> */}
               <div className="frame-35-2">
-                <h1 className="h4-20 color-black">나의 미션</h1>
+                <h4 className="h4-20 color-black">나의 미션</h4>
                 <Link className="frame-56-2 link" href="/profile/mission">
                   <p className="more color-gray-04">모두 보기</p>
-                  <div className="arrow-right">
-                    <div className="frame-78">
-                      <Icon
-                        src="/icon_arrow_right.svg"
-                        alt="more"
-                        width={12}
-                        height={12}
-                      />
-                    </div>
-                  </div>
+                  <Icon
+                    src="/icon_arrow_right.png"
+                    alt="more"
+                    width={24}
+                    height={24}
+                  />
                 </Link>
               </div>
               <Mission usrId={profile.id} />
@@ -165,22 +153,18 @@ export default async function ProfilePage() {
           <div className="frame-42">
             <div className="frame-34-6 background-white border-gray-06">
               <div className="frame-35-3">
-                <div className="frame-9">
-                  <h4 className="h4-20 color-black">나의 보상</h4>
-                  <Link className="frame-56-2 link" href="/profile/reward">
-                    <p className="more color-gray-04">모두 보기</p>
-                    <div className="arrow-right">
-                      <div className="frame-78">
-                        <Icon
-                          src="/icon_arrow_right.svg"
-                          alt="more"
-                          width={12}
-                          height={12}
-                        />
-                      </div>
-                    </div>
-                  </Link>
-                </div>
+                <h4 className="h4-20 color-black">나의 보상</h4>
+                {/* <div className="frame-9"> */}
+                <Link className="frame-56-2 link" href="/profile/reward">
+                  <p className="more color-gray-04">모두 보기</p>
+                  <Icon
+                    src="/icon_arrow_right.png"
+                    alt="more"
+                    width={24}
+                    height={24}
+                  />
+                </Link>
+                {/* </div> */}
               </div>
               <div className="frame-96">
                 <div className="frame-93-6">

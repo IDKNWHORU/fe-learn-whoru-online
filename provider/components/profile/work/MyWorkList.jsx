@@ -86,7 +86,12 @@ export default async function MyWorkList({ usrId }) {
               <div className="frame-93-8"></div>
             </div>
           </div>
-          <div className="line border-gray-04" />
+          <hr className="line-gray-04" />
+          <hr className="line-gray-04" />
+          <hr className="line-gray-04" />
+          <hr className="line-gray-04" />
+          <hr className="line-gray-04" />
+          <hr className="line-gray-04" />
           {works.map((work, index) => (
             <Fragment key={work.detailId}>
               <div className="frame-118">

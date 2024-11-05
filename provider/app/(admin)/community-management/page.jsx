@@ -43,7 +43,10 @@ async function ContentList() {
                 </Link>
                 <div className="frame-100-3">
                   <p className="caption-12 color-gray-04">
-                    작성 일시: {getTimeStamp(createAt)}
+                    작성일:{" "}
+                    {getTimeStamp(createAt)
+                      .substring(0, 10)
+                      .replaceAll("-", ".")}
                   </p>
                 </div>
                 <div className="frame-100-3">
@@ -70,21 +73,26 @@ export default async function CommunityListPage() {
     <>
       <header className="nb">
         <BackButton />
+        <div className="dropdown">
+          <button className="h4-20 color-purple-01" type="button">
+            추가하기
+          </button>
+          <div className="dropdown-content">
+            <Link
+              href={`/community-management/new?type=${COMMUNITY_TYPE.BANNER}`}
+            >
+              <h3 className="h4-20">배너</h3>
+            </Link>
+            <hr className="line-gray-05" />
+            <Link
+              href={`/community-management/new?type=${COMMUNITY_TYPE.ANNOUNCEMENT}`}
+            >
+              <h3 className="h4-20">공지사항</h3>
+            </Link>
+          </div>
+        </div>
       </header>
       <article className="wrapper">
-        <div className="flex-end">
-          <Link
-            href={`/community-management/new?type=${COMMUNITY_TYPE.BANNER}`}
-          >
-            <h3 className="h3-24">배너추가</h3>
-          </Link>
-          <div className="margin1" />
-          <Link
-            href={`/community-management/new?type=${COMMUNITY_TYPE.ANNOUNCEMENT}`}
-          >
-            <h3 className="h3-24">공지사항 추가</h3>
-          </Link>
-        </div>
         <div className="frame-93">
           <div className="frame-57">
             <h3 className="h3-24 color-black">콘텐츠 목록</h3>

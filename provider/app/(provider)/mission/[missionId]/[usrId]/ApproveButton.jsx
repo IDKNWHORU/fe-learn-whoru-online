@@ -7,7 +7,7 @@ const SubmitButton = ({ isApproved }) => {
   const { pending } = useFormStatus();
 
   return (
-    <button className="button1 h5-18 button-L" type="submit" disabled={pending}>
+    <button className="button1 h5-16 button-L" type="submit" disabled={pending}>
       {isApproved
         ? "이미 승인되었습니다."
         : pending

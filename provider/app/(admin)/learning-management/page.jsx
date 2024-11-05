@@ -38,7 +38,7 @@ async function LearningList() {
             </div>
           </div>
           {index < learnings.length - 1 ? (
-            <div className="line border-gray-05" />
+            <div className="line-gray-05" />
           ) : null}
         </Fragment>
       ))}
@@ -56,7 +56,7 @@ export default async function LearningListPage() {
           href="/learning-management/new"
         >
           <Icon
-            src="/icon_plus.svg"
+            src="/icon_plus.png"
             alt="학습 추가하기"
             width={24}
             height={24}

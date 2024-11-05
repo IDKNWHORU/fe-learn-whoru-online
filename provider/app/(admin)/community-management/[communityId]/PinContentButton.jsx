@@ -6,12 +6,12 @@ import { pinContent, unpinContent } from "../actions";
 const SubmitButton = ({ isPinned }) => {
   const { pending } = useFormStatus();
   return (
-    <button type="submit" disabled={pending}>
-      {isPinned ? (
-        <>{pending ? "고정 해제하는 중입니다." : "고정 해제 하기"}</>
-      ) : (
-        <>{pending ? "고정하는 중입니다." : "상단 고정 하기"}</>
-      )}
+    <button
+      className={`caption-12 ${isPinned ? "" : "color-gray-04"}`}
+      type="submit"
+      disabled={pending}
+    >
+      고정
     </button>
   );
 };

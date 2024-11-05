@@ -10,12 +10,14 @@ const SubmitButton = ({ isContentRecommendExist }) => {
   const { pending } = useFormStatus();
 
   return (
-    <button className="button2 caption-12" type="submit" disabled={pending}>
-      {isContentRecommendExist ? (
-        <>{pending ? "해제중.." : "추천 해제"}</>
-      ) : (
-        <>{pending ? "추천중.." : "추천"}</>
-      )}
+    <button
+      className={`button2 caption-12 ${
+        isContentRecommendExist ? "color-blue" : "color-gray-04"
+      }`}
+      type="submit"
+      disabled={pending}
+    >
+      추천
     </button>
   );
 };

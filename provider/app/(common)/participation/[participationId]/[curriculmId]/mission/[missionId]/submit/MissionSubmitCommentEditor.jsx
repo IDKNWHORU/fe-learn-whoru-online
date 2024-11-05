@@ -12,7 +12,7 @@ const SubmitButton = (usrId) => {
 
   return (
     <button
-      className="button1"
+      className="button-L"
       type="submit"
       disabled={usrId === null ? true : pending}
     >

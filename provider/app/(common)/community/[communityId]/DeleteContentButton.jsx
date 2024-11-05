@@ -7,8 +7,14 @@ const SubmitButton = () => {
   const { pending } = useFormStatus();
 
   return (
-    <button className="button2 caption-12" type="submit" disabled={pending}>
-      {pending ? "콘텐츠를 삭제하는 중입니다..." : "삭제하기"}
+    <button
+      className={`button2 caption-12 ${
+        pending ? "color-gray-04" : "color-red"
+      }`}
+      type="submit"
+      disabled={pending}
+    >
+      삭제하기
     </button>
   );
 };

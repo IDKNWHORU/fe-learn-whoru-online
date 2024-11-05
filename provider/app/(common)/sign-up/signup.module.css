@@ -5,7 +5,7 @@
 
 .form-button-area {
   display: flex;
-  justify-content: flex-end;
+  justify-content: center;
   padding: 0 0 15px 0;
 }
 

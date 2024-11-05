@@ -96,7 +96,7 @@ async function DetailedAnnouncementList({ announcementId }) {
             </div>
           </div>
           {index < detailedAnnouncements.length - 1 ? (
-            <div className="line border-gray-05" />
+            <div className="line-gray-05" />
           ) : null}
         </Fragment>
       ))}
@@ -123,7 +123,7 @@ export default async function AnnouncementPage({ params: { announcementId } }) {
                 <h2 className="h4-20 color-black">{announcement.title}</h2>
               </div>
             </div>
-            <div className="line border-gray-05" />
+            <div className="line-gray-05" />
             <div className="frame-120">
               <Viewer content={announcement.description} height="100%" />
             </div>

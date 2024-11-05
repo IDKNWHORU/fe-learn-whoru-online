@@ -88,7 +88,12 @@ export default async function MissionList({ usrId }) {
               </div>
             </div>
           </div>
-          <div className="line border-gray-04" />
+          <div className="line-gray-04" />
+          <div className="line-gray-04" />
+          <div className="line-gray-04" />
+          <div className="line-gray-04" />
+          <div className="line-gray-04" />
+          <div className="line-gray-04" />
           {missions.map((mission, index) => (
             <Fragment key={mission.missionId}>
               <div className="frame-118">

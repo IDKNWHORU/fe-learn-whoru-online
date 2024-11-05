@@ -56,7 +56,7 @@ async function SubmitList({ missionId }) {
           <h2 className="h4-20 color-black">제출 목록</h2>
         </div>
       </div>
-      <div className="line border-gray-05" />
+      <div className="line-gray-05" />
       {submits.map((submit) => (
         <div className="frame-118" key={submit.usrId}>
           <div className="frame-100-2">
@@ -88,7 +88,7 @@ async function Mission({ missionId }) {
           <h2 className="h4-20">{mission.title}</h2>
         </div>
       </div>
-      <div className="line border-gray-05" />
+      <div className="line-gray-05" />
       <section className="frame-120">
         <Viewer content={mission.missionSubmitForm} height="100%" />
       </section>

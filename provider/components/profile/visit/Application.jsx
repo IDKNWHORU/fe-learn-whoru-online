@@ -25,7 +25,7 @@ export default async function Application({ usrId, nick }) {
       {applications.map((application, index) => (
         <Fragment key={application.applicationId}>
           <div className="frame-44">
-            <div className="frame-3 background-white border-purple-01">
+            <div className="frame-4-1 background-white border-purple-01">
               <p className="caption-12 color-purple-01">마감 미설정</p>
             </div>
             <Link
@@ -36,7 +36,7 @@ export default async function Application({ usrId, nick }) {
             </Link>
           </div>
           {index < applications.length - 1 ? (
-            <div className="line border-gray-05" />
+            <div className="line-gray-05" />
           ) : null}
         </Fragment>
       ))}

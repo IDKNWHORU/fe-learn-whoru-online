@@ -1,3 +1,4 @@
+import Footer from "@/components/aisde/Footer";
 import Navigation from "../components/Navigation";
 import "./global.css";
 
@@ -17,6 +18,7 @@ export default async function RootLayout({ children }) {
       <body className="body">
         <Navigation />
         <main className="main">{children}</main>
+        <Footer />
       </body>
     </html>
   );

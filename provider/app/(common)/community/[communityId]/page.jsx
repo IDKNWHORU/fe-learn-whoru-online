@@ -155,7 +155,7 @@ async function ContentCoomentList({ contentId }) {
               </div>
             </section>
             {index < comments.length - 1 ? (
-              <div className="line border-gray-05" />
+              <div className="line-gray-05" />
             ) : null}
           </Fragment>
         ))}
@@ -167,11 +167,7 @@ async function ContentCoomentList({ contentId }) {
 async function ContentRecommendCount({ contentId }) {
   const contentRecommendCount = await getContentRecommendCount(contentId);
 
-  return (
-    <div>
-      <p className="caption-12">추천수: {contentRecommendCount}</p>
-    </div>
-  );
+  return <p className="caption-12">추천수: {contentRecommendCount}</p>;
 }
 
 async function ContentRecommend({ contentId }) {
@@ -206,7 +202,7 @@ export default async function ContentPage({ params: { communityId } }) {
               href={`/community/${communityId}/edit`}
             >
               <Icon
-                src="/icon_write.svg"
+                src="/icon_write.png"
                 alt="수정하기"
                 width={24}
                 height={24}
@@ -226,7 +222,7 @@ export default async function ContentPage({ params: { communityId } }) {
             }`}
           >
             <div className="frame background-white border-gray-06">
-              <div className="frame-101">
+              <div className="frame-101-3">
                 <div className="frame-9">
                   <div className="frame-145">
                     <h1 className="h4-20 color-black">
@@ -234,21 +230,25 @@ export default async function ContentPage({ params: { communityId } }) {
                     </h1>
                   </div>
                   <div className="frame-9-3">
-                    <p className="caption-12 color-gray-04">
-                      작성자: <UserNick usrId={content.usrId} />
-                    </p>
-                    {/* <p className="caption-12 color-gray-04">
+                    <div className="content-info">
+                      <p className="caption-12 color-gray-04">
+                        작성자: <UserNick usrId={content.usrId} />
+                      </p>
+                      {/* <p className="caption-12 color-gray-04">
                       {getTimeStamp(content.createAt)}
                     </p> */}
-                    <ContentRecommendCount contentId={communityId} />
-                    {profile === null ? null : (
-                      <ContentRecommend contentId={communityId} />
-                    )}
-                    {editableContentTypes.includes(content.type) ? (
-                      profile === null ? null : (
-                        <DeleteContentButton communityId={communityId} />
-                      )
-                    ) : null}
+                      <ContentRecommendCount contentId={communityId} />
+                    </div>
+                    <div className="content-buttons">
+                      {profile === null ? null : (
+                        <ContentRecommend contentId={communityId} />
+                      )}
+                      {editableContentTypes.includes(content.type) ? (
+                        profile === null ? null : (
+                          <DeleteContentButton communityId={communityId} />
+                        )
+                      ) : null}
+                    </div>
                   </div>
                 </div>
               </div>
@@ -264,7 +264,7 @@ export default async function ContentPage({ params: { communityId } }) {
               <ContentCoomentList contentId={communityId} />
               <div className="frame background-white border-gray-06 mission-comment mission-comment-editor">
                 <div className="frame-148">
-                  <h2 className="h5-18">코멘트 작성하기</h2>
+                  <h2 className="h5-16">코멘트 작성하기</h2>
                 </div>
                 <ContentCommentEditor
                   contentId={communityId}

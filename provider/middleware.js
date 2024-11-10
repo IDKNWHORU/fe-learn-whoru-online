@@ -75,7 +75,7 @@ export default async function middlware(req) {
 
     return res;
   } catch (error) {
-    console.log(error.toString());
+    console.log(`${pathname}: ${error.toString()}`);
 
     if (error instanceof UnAuthorizedError) {
       const refreshPage = NextResponse.redirect(req.url);

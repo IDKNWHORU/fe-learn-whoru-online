@@ -59,7 +59,7 @@ const fetchWithRetry = async (url, options, maxRetry = 3) => {
     if (status === 401) {
       throw new UnAuthorizedError("Failed to refresh access token.");
     } else {
-      throw new Error("getUserRightResponse is not ok");
+      throw new Error(`getUserRightResponse is not ok(code: ${status})`);
     }
   }
 

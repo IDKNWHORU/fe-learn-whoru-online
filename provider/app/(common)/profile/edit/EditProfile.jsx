@@ -28,20 +28,26 @@ export default function EditProfile({ profile }) {
   const avatarRef = useRef(null);
   const [avatarUrl, setAvatarUrl] = useState(profile.avatar);
 
-  if (!profile) return <h1>사용자 데이터를 불러오지 못했습니다.</h1>;
+  if (!profile) return <p>사용자 데이터를 불러오지 못했습니다.</p>;
 
   const handleUpdateProfile = async (profileFormData) => {
     const { editorInstance } = editorRef.current;
+    const selfIntro = editorInstance.getMarkdown();
+
+    if (selfIntro.length > 1000) {
+      alert("자기소개는 1000자를 넘을 수 없습니다");
+      return;
+    }
 
     try {
       await updateProfile({
         nick: profileFormData.get("nick"),
         phnNmb: profileFormData.get("phone_number"),
-        selfIntro: editorInstance.getMarkdown(),
+        selfIntro,
         avatar: avatarRef.current.dataset.url,
       });
 
-      alert("프로필이 업데이트 되었습니다.");
+      alert("프로필이 업데이트 되었습니다");
     } catch ({ message }) {
       alert(message);
     }
@@ -60,6 +66,29 @@ export default function EditProfile({ profile }) {
 
     e.target.dataset.url = uploadAvatarImageResponse;
     setAvatarUrl(uploadAvatarImageResponse);
+  };
+
+  const handleInvalidNick = (e) => {
+    if (e.target.value) {
+    } else {
+      e.target.setCustomValidity("닉네임을 입력해주세요");
+    }
+  };
+
+  const handleInputNick = (e) => {
+    e.target.setCustomValidity("");
+  };
+
+  const handleInvalidPhone = (e) => {
+    if (e.target.value) {
+      e.target.setCustomValidity("휴대폰번호를 올바르게 입력해주세요");
+    } else {
+      e.target.setCustomValidity("휴대폰번호를 입력해주세요");
+    }
+  };
+
+  const handleInputPhone = (e) => {
+    e.target.setCustomValidity("");
   };
 
   return (
@@ -95,7 +124,7 @@ export default function EditProfile({ profile }) {
           </div>
           <div className="input-2">
             <label className="h5-16 color-gray-03" htmlFor="nick">
-              닉네임
+              닉네임 *
             </label>
             <input
               className="frame-102-3 background-white border-gray-05 p1-18 color-gray-04"
@@ -104,30 +133,54 @@ export default function EditProfile({ profile }) {
               id="nick"
               placeholder="닉네임을 입력하세요"
               defaultValue={profile.nick}
+              onInvalid={handleInvalidNick}
+              onInput={handleInputNick}
+              maxLength={30}
+              required
+              autoComplete="off"
             />
+            <ul className="hint-list">
+              <li>닉네임은 30자를 초과할 수 없습니다</li>
+            </ul>
           </div>
           <div className="input-2">
             <label className="h5-16 color-gray-03" htmlFor="phone_number">
-              핸드폰번호
+              핸드폰번호 *
             </label>
             <input
               className="frame-102-3 background-white border-gray-05 p1-18 color-gray-04"
-              type="number"
+              type="tel"
               name="phone_number"
               id="phone_number"
-              placeholder="'-' 없이 숫자만 입력해주세요."
+              placeholder="01012345678"
+              onInvalid={handleInvalidPhone}
+              onInput={handleInputPhone}
               defaultValue={profile.phnNmb}
+              pattern="^(010|011|016|017|018|019|02)\d{7,8}$"
+              maxLength={11}
+              required
             />
+            <ul className="hint-list">
+              <li>'-' 없이 입력해주세요</li>
+              <li>숫자만 입력해주세요</li>
+              <li>
+                전화번호는 '02' 또는 '010' 같은 번호로 시작하고, 총 9~11자리
+                숫자여야 합니다
+              </li>
+            </ul>
           </div>
           <div className="input-2">
             <label className="h5-16 color-gray-03">자기소개</label>
-          </div>
-          <div className="frame-102-4 background-white content-editor">
-            <Editor
-              editorRef={editorRef}
-              content={profile.selfIntro}
-              height="100%"
-            />
+            <div className="frame-102-4 background-white content-editor">
+              <Editor
+                editorRef={editorRef}
+                content={profile.selfIntro}
+                height="100%"
+              />
+            </div>
+            <ul className="hint-list">
+              <li>자기소개는 1000자를 초과할 수 없습니다</li>
+            </ul>
           </div>
           <div className="frame-157">
             <SubmitButton />

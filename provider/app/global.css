@@ -986,6 +986,22 @@
   padding: 0;
 }
 
+.input-2 .hint-list {
+  visibility: hidden;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  color: var(--info);
+  background: var(--gray07);
+  border-radius: 10px;
+  margin: 0;
+  padding: 8px 0 8px 40px;
+}
+
+.input-2:focus-within .hint-list {
+  visibility: visible;
+  opacity: 1;
+}
+
 @media (max-width: 1437px) {
   .article-list-wrapper {
     width: 100%;

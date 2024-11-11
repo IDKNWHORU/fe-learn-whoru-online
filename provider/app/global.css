@@ -1097,8 +1097,13 @@
 
   .aside {
     width: 100vw;
-    min-height: 477px;
+    min-height: 237px;
     overflow-y: auto;
+  }
+
+  .gnb {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
   }
 
   .aside > .footer {
@@ -1345,6 +1350,14 @@
 }
 
 @media (max-width: 450px) {
+  .aside {
+    min-height: 320px;
+  }
+
+  .gnb {
+    grid-template-columns: 1fr 1fr;
+  }
+
   .home-content {
     padding: 40px 20px 0;
   }

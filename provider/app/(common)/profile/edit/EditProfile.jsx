@@ -16,9 +16,15 @@ const SubmitButton = () => {
 
   return (
     <button className={editprofilestyle.editProfileButton} disabled={pending}>
-      {pending
-        ? "프로필을 업데이트 중입니다... 잠시만 기다려 주세요 😊"
-        : "프로필 저장"}
+      {pending ? (
+        <>
+          프로필을 업데이트 중입니다...
+          <br />
+          잠시만 기다려 주세요 😊
+        </>
+      ) : (
+        "프로필 저장"
+      )}
     </button>
   );
 };

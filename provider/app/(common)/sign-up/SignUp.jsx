@@ -15,9 +15,15 @@ const SubmitButton = () => {
   const { pending } = useFormStatus();
   return (
     <button className={signupstyle.signupButton} disabled={pending}>
-      {pending
-        ? "잠시만 기다려 주세요, 회원가입을 처리 중입니다... ⏳"
-        : "지금 바로 가입하기 🚀"}
+      {pending ? (
+        <>
+          회원가입을 처리 중입니다...
+          <br />
+          잠시만 기다려 주세요 ⏳
+        </>
+      ) : (
+        "지금 바로 가입하기 🚀"
+      )}
     </button>
   );
 };

@@ -94,6 +94,10 @@
   font-size: var(--h5-16-font-size);
 }
 
+.signupButton:disabled {
+  line-height: 1.5;
+}
+
 @media (max-width: 870px) {
   .signupPage {
     width: 100vw;

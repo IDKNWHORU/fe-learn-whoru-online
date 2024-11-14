@@ -7,6 +7,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { useRef, useState } from "react";
 import { useFormStatus } from "react-dom";
+import editprofilestyle from "./editprofile.module.css";
 
 const Editor = dynamic(() => import("@/components/Editor"), { ssr: false });
 
@@ -14,11 +15,10 @@ const SubmitButton = () => {
   const { pending } = useFormStatus();
 
   return (
-    <button
-      className="button-L-2 background-purple-01 h5-16 color-white"
-      disabled={pending}
-    >
-      {pending ? "프로필 적용을 진행중입니다..." : "프로필 적용"}
+    <button className={editprofilestyle.editProfileButton} disabled={pending}>
+      {pending
+        ? "프로필을 업데이트 중입니다... 잠시만 기다려 주세요 😊"
+        : "프로필 저장"}
     </button>
   );
 };
@@ -28,28 +28,52 @@ export default function EditProfile({ profile }) {
   const avatarRef = useRef(null);
   const [avatarUrl, setAvatarUrl] = useState(profile.avatar);
 
-  if (!profile) return <p>사용자 데이터를 불러오지 못했습니다.</p>;
+  if (!profile)
+    return (
+      <p>사용자 데이터를 불러오지 못했어요. 잠시 후 다시 시도해 주세요.</p>
+    );
 
   const handleUpdateProfile = async (profileFormData) => {
+    const nick = profileFormData.get("nick");
+    const phoneNumber = profileFormData.get("phone_number");
     const { editorInstance } = editorRef.current;
+
+    if (nick == null || nick.trim() == "") {
+      alert("닉네임을 입력해 주세요 😊");
+      return;
+    }
+
+    if (!phoneNumber) {
+      alert("연락처를 입력해 주시면 더 빠르게 도와드릴 수 있어요! 📱");
+      return;
+    }
+
+    const phonePattern = /^(010|011|016|017|018|019)\d{7,8}$/;
+    if (!phonePattern.test(phoneNumber)) {
+      alert(
+        "유효한 휴대폰 번호를 입력해 주세요. 예: 01012345678 또는 0191234567 📞"
+      );
+      return;
+    }
+
     const selfIntro = editorInstance.getMarkdown();
 
     if (selfIntro.length > 1000) {
-      alert("자기소개는 1000자를 넘을 수 없습니다");
+      alert(`자기소개 자리수 한계를 넘었습니다 (${selfIntro.length} / 1000)`);
       return;
     }
 
     try {
       await updateProfile({
-        nick: profileFormData.get("nick"),
-        phnNmb: profileFormData.get("phone_number"),
+        nick: nick,
+        phnNmb: phoneNumber,
         selfIntro,
         avatar: avatarRef.current.dataset.url,
       });
 
-      alert("프로필이 업데이트 되었습니다");
+      alert("프로필이 성공적으로 업데이트되었습니다! 🎉");
     } catch ({ message }) {
-      alert(message);
+      alert(message | "오류가 발생했어요. 다시 시도해 보시겠어요? 😥");
     }
   };
 
@@ -68,43 +92,22 @@ export default function EditProfile({ profile }) {
     setAvatarUrl(uploadAvatarImageResponse);
   };
 
-  const handleInvalidNick = (e) => {
-    if (e.target.value) {
-    } else {
-      e.target.setCustomValidity("닉네임을 입력해주세요");
-    }
-  };
-
-  const handleInputNick = (e) => {
-    e.target.setCustomValidity("");
-  };
-
-  const handleInvalidPhone = (e) => {
-    if (e.target.value) {
-      e.target.setCustomValidity("휴대폰번호를 올바르게 입력해주세요");
-    } else {
-      e.target.setCustomValidity("휴대폰번호를 입력해주세요");
-    }
-  };
-
-  const handleInputPhone = (e) => {
-    e.target.setCustomValidity("");
-  };
-
   return (
     <form
-      className="frame-34-10 background-white border-gray-06"
+      className={editprofilestyle.editProfileForm}
       action={handleUpdateProfile}
     >
-      <div className="frame-117">
-        <div className="frame-116">
-          <div className="input-2">
-            <label className="h5-16 color-gray-03" htmlFor="avatar">
+      <div>
+        <div className={editprofilestyle.editProfileFormInner}>
+          <div className={editprofilestyle.eidtProfileInputFieldSet}>
+            <label
+              className={editprofilestyle.editProfileLabel}
+              htmlFor="avatar"
+            >
               이미지
             </label>
-            <div className="group-8">
+            <div>
               <Image
-                className="avatar"
                 src={avatarUrl}
                 alt="아바타"
                 width={60}
@@ -112,7 +115,6 @@ export default function EditProfile({ profile }) {
                 onClick={handleClickAvatarButton}
               />
               <input
-                className="avatar-hidden"
                 ref={avatarRef}
                 type="file"
                 id="avatar"
@@ -122,72 +124,70 @@ export default function EditProfile({ profile }) {
               />
             </div>
           </div>
-          <div className="input-2">
-            <label className="h5-16 color-gray-03" htmlFor="nick">
+          <div className={editprofilestyle.eidtProfileInputFieldSet}>
+            <label className={editprofilestyle.editProfileLabel} htmlFor="nick">
               닉네임 *
             </label>
             <input
-              className="frame-102-3 background-white border-gray-05 p1-18 color-gray-04"
+              className={editprofilestyle.editProfileInputField}
               type="text"
               name="nick"
               id="nick"
-              placeholder="닉네임을 입력하세요"
+              placeholder="사용할 닉네임을 입력하세요. 예: 루덴스 ✨"
               defaultValue={profile.nick}
-              onInvalid={handleInvalidNick}
-              onInput={handleInputNick}
               maxLength={30}
-              required
               autoComplete="off"
             />
-            <ul className="hint-list">
+            <ul className={editprofilestyle.editProfileHintList}>
               <li>닉네임은 30자를 초과할 수 없습니다</li>
             </ul>
           </div>
-          <div className="input-2">
-            <label className="h5-16 color-gray-03" htmlFor="phone_number">
+          <div className={editprofilestyle.eidtProfileInputFieldSet}>
+            <label
+              className={editprofilestyle.editProfileLabel}
+              htmlFor="phone_number"
+            >
               핸드폰번호 *
             </label>
             <input
-              className="frame-102-3 background-white border-gray-05 p1-18 color-gray-04"
+              className={editprofilestyle.editProfileInputField}
               type="tel"
               name="phone_number"
               id="phone_number"
-              placeholder="01012345678"
-              onInvalid={handleInvalidPhone}
-              onInput={handleInputPhone}
+              placeholder="휴대폰 번호를 입력해 주세요. 예: 01012345678 📞"
               defaultValue={profile.phnNmb}
-              pattern="^(010|011|016|017|018|019|02)\d{7,8}$"
               maxLength={11}
-              required
+              autoComplete="off"
             />
-            <ul className="hint-list">
-              <li>'-' 없이 입력해주세요</li>
-              <li>숫자만 입력해주세요</li>
+            <ul className={editprofilestyle.editProfileHintList}>
               <li>
-                전화번호는 '02' 또는 '010' 같은 번호로 시작하고, 총 9~11자리
-                숫자여야 합니다
+                휴대폰 번호는 '010', '011', '016', '017', '018', '019'로
+                시작해야 합니다
               </li>
+              <li>하이픈(-) 없이 숫자만 입력해 주세요. 예: 01012345678</li>
             </ul>
           </div>
-          <div className="input-2">
-            <label className="h5-16 color-gray-03">자기소개</label>
-            <div className="frame-102-4 background-white content-editor">
+          <div className={editprofilestyle.eidtProfileInputFieldSet}>
+            <label className={editprofilestyle.editProfileLabel}>
+              자기소개
+            </label>
+            <div className={editprofilestyle.editProfileTextAreaField}>
               <Editor
                 editorRef={editorRef}
                 content={profile.selfIntro}
                 height="100%"
               />
             </div>
-            <ul className="hint-list">
+            <ul className={editprofilestyle.editProfileHintList}>
               <li>자기소개는 1000자를 초과할 수 없습니다</li>
             </ul>
           </div>
-          <div className="frame-157">
+          <div className={editprofilestyle.editProfileSubmitButtonOuter}>
             <SubmitButton />
           </div>
-          <div className="frame-157">
-            <Link className="link" href="/profile/delete">
-              <p className="p5-18 color-alert">회원 탈퇴 페이지로 이동</p>
+          <div className={editprofilestyle.leaveOuter}>
+            <Link className={editprofilestyle.leave} href="/profile/delete">
+              회원 탈퇴 페이지로 이동하기
             </Link>
           </div>
         </div>

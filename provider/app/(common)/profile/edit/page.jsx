@@ -1,6 +1,7 @@
 import BackButton from "@/components/BackButton";
 import { getProfile } from "../page";
 import EditProfile from "./EditProfile";
+import editprofilestyle from "./editprofile.module.css";
 
 export async function generateMetadata() {
   const profile = await getProfile();
@@ -18,14 +19,16 @@ export default async function EditProfilePage() {
       <header className="nb">
         <BackButton />
       </header>
-      <div className="wrapper">
-        <div className="frame-93">
-          <div className="frame-57">
-            <h1 className="h3-24 color-black">프로필 수정</h1>
-          </div>
+      <section className={editprofilestyle.editProfilePage}>
+        <article className={editprofilestyle.editProfilePageInner}>
+          <header className={editprofilestyle.editProfilePageHeader}>
+            <h1 className={editprofilestyle.editProfilePageTitle}>
+              프로필 수정
+            </h1>
+          </header>
           <EditProfile profile={profile} />
-        </div>
-      </div>
+        </article>
+      </section>
     </>
   );
 }

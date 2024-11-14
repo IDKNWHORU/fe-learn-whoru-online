@@ -1,0 +1,137 @@
+.editProfilePage {
+  box-sizing: border-box;
+  padding: 20px 40px;
+}
+
+.editProfilePageInner {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.editProfilePageHeader {
+  display: flex;
+  gap: 16px;
+  align-items: center;
+  justify-content: space-between;
+  height: 29px;
+}
+
+.editProfilePageTitle {
+  margin: 0;
+  font-family: var(--font-pretendard);
+  font-size: var(--h3-24-font-size);
+  color: var(--black);
+}
+
+.editProfileForm {
+  border: 1px solid var(--gray06);
+  background: var(--white);
+  border-radius: 20px;
+}
+
+.editProfileFormInner {
+  box-sizing: border-box;
+  padding: 24px 40px 40px;
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+}
+
+.eidtProfileInputFieldSet {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.editProfileLabel {
+  margin: 0;
+  font-family: var(--font-pretendard);
+  font-style: var(----h5-16-font-style);
+  font-weight: var(----h5-16-font-weight);
+  font-size: var(----h5-16-font-size);
+  color: var(--gray03);
+}
+
+.editProfileInputField {
+  border: 1px solid var(--gray05);
+  border-radius: 10px;
+  box-sizing: border-box;
+  padding: 12px 16px;
+  height: 48px;
+  background: var(--white);
+  font-size: var(--p1-18-font-size);
+  color: var(--gray04);
+}
+
+.editProfileTextAreaField {
+  background: var(--white);
+  border-radius: 10px;
+  height: 614px;
+}
+
+.eidtProfileInputFieldSet .editProfileHintList {
+  visibility: hidden;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  color: var(--info);
+  background: var(--gray07);
+  border-radius: 10px;
+  margin: 0;
+  padding: 8px 0 8px 40px;
+}
+
+.eidtProfileInputFieldSet:focus-within .editProfileHintList {
+  visibility: visible;
+  opacity: 1;
+}
+
+.editProfileSubmitButtonOuter,
+.leaveOuter {
+  text-align: center;
+}
+
+.editProfileButton {
+  box-sizing: border-box;
+  border: none;
+  border-radius: 40px;
+  margin: 0;
+  padding: 19px 36px;
+  width: clamp(200px, 100%, 320px);
+  background: var(--purple01);
+  color: var(--white);
+  font-family: var(--font-pretendard);
+  font-style: var(--h5-16-font-style);
+  font-weight: var(--h5-16-font-weight);
+  font-size: var(--h5-16-font-size);
+}
+
+.leave {
+  text-decoration: unset;
+  color: var(--alert);
+  font-family: var(--font-pretendard);
+  font-style: var(--h5-16-font-style);
+  font-weight: var(--h5-16-font-weight);
+  font-size: var(--h5-16-font-size);
+}
+
+@media (max-width: 870px) {
+  .editProfilePage {
+    width: 100vw;
+    padding: 20px 0;
+  }
+
+  .editProfilePageHeader {
+    padding: 0 40px;
+  }
+
+  .editProfileForm {
+    border-radius: 0;
+  }
+}
+
+@media (max-width: 450px) {
+  .editProfileTextAreaField {
+    height: 307px;
+  }
+}

@@ -1,0 +1,91 @@
+.contributorsButton {
+  height: 25px;
+  display: flex;
+  align-items: center;
+  text-decoration: unset;
+  color: var(--gray04);
+  gap: 4px;
+}
+
+.contributorsModal {
+  width: 350px;
+  border: 1px solid var(--gray06);
+  border-radius: 20px;
+}
+
+.contributorsModal:focus-visible {
+  outline: 1px solid var(--gray06);
+}
+
+.contributorsHeader {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 6px;
+}
+
+.contributorsTitle {
+  margin: 0;
+  font-family: var(--font-pretendard);
+  font-size: var(--h4-20-font-size);
+  font-style: var(--h4-20-font-style);
+  font-weight: var(--h4-20-font-weight);
+  line-height: var(--h4-20-line-height);
+  letter-spacing: var(--h4-20-letter-spacing);
+  color: var(--gray03);
+}
+
+.contributorList {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.contributor {
+  display: flex;
+  gap: 8px;
+  align-items: center;
+  margin: 0;
+  font-family: var(--font-pretendard);
+  font-size: var(--p1-18-font-size);
+}
+
+.contributorImage {
+  border-radius: 50%;
+}
+
+.contributorLink {
+  text-decoration: unset;
+  color: #1a0dab;
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0.1);
+}
+
+.contributor:visited {
+  color: #681da8;
+}
+
+.closeModalButtonArea {
+  display: flex;
+  justify-content: center;
+  padding: 8px 0;
+}
+
+.closeModalButton {
+  display: flex;
+  margin: 0;
+  box-sizing: border-box;
+  padding: 8px 20px;
+  height: 36px;
+  border: none;
+  border-radius: 40px;
+  background: var(--purple01);
+  justify-content: center;
+  align-items: center;
+
+  font-family: var(--font-pretendard);
+  font-style: var(--h5-16-font-style);
+  font-weight: var(--h5-16-font-weight);
+  font-size: var(--h5-16-font-size);
+  line-height: 26px;
+  color: var(--white);
+}

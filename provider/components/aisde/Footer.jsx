@@ -1,6 +1,7 @@
 import Link from "next/link";
 import Icon from "../Icon";
 import Logo2 from "./Logo2";
+import Contributors from "./Contributors";
 
 export default function Footer() {
   return (
@@ -82,6 +83,7 @@ export default function Footer() {
               />
               Customer Service
             </Link>
+            <Contributors />
           </div>
         </div>
         <div className="copyright">

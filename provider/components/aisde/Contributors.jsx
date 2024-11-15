@@ -25,13 +25,23 @@ export default function Contributors() {
         type="button"
         onClick={handleOpenContributorsModal}
       >
-        <Image src="/icon_medal.png" width={16} height={16} />
+        <Image
+          src="/icon_medal.png"
+          width={16}
+          height={16}
+          alt="기여자 목록 확인하기"
+        />
         Contributors
       </Link>
       <dialog className={footerstyle.contributorsModal} ref={dialogRef}>
         <header className={footerstyle.contributorsHeader}>
           <h4 className={footerstyle.contributorsTitle}>기여자 목록</h4>
-          <Image src="/icon_medal.png" width={16} height={16} />
+          <Image
+            src="/icon_medal.png"
+            width={16}
+            height={16}
+            alt="기여자 목록 표시"
+          />
         </header>
         <ul className={footerstyle.contributorList}>
           <li className={footerstyle.contributor}>
@@ -41,6 +51,7 @@ export default function Contributors() {
               agwn"
               width={35}
               height={35}
+              alt="agwn 프로필 확인하기"
             />
             <Link
               className={footerstyle.contributorLink}
@@ -56,6 +67,7 @@ export default function Contributors() {
               src="https://avatars.githubusercontent.com/u/151835493?v=4"
               width={35}
               height={35}
+              alt="basky 프로필 확인하기"
             />
             <Link
               className={footerstyle.contributorLink}
@@ -71,6 +83,7 @@ export default function Contributors() {
               src="https://avatars.githubusercontent.com/u/49608580?s=70&v=4"
               width={35}
               height={35}
+              alt="whoru 프로필 확인하기"
             />
             <Link
               className={footerstyle.contributorLink}
@@ -86,6 +99,7 @@ export default function Contributors() {
               src="https://avatars.githubusercontent.com/u/54282927?v=4"
               width={35}
               height={35}
+              alt="won 프로필 확인하기"
             />
             <Link
               className={footerstyle.contributorLink}
@@ -101,6 +115,7 @@ export default function Contributors() {
               src="https://avatars.githubusercontent.com/u/119479530?v=4"
               width={35}
               height={35}
+              alt="fori 프로필 확인하기"
             />
             <Link
               className={footerstyle.contributorLink}
@@ -116,6 +131,7 @@ export default function Contributors() {
               src="https://pbs.twimg.com/profile_images/1605216555226107906/m4tumUuY_200x200.jpg"
               width={35}
               height={35}
+              alt="Blynn 프로필 확인하기"
             />
             <Link
               className={footerstyle.contributorLink}

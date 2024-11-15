@@ -1,0 +1,24 @@
+.avatarLoading {
+  height: 174px;
+  border: 1px solid var(--gray06);
+  border-radius: 20px;
+  animation: loadingBackground 1s infinite alternate;
+}
+
+.boardLoading {
+  flex: 1 1;
+  height: 467px;
+  border: 1px solid var(--gray06);
+  border-radius: 20px;
+  animation: loadingBackground 1s infinite alternate;
+}
+
+@keyframes loadingBackground {
+  0% {
+    background: var(--white);
+  }
+
+  100% {
+    background: var(--gray06);
+  }
+}

@@ -105,7 +105,7 @@ export default function NearWallet() {
               <div className={style.mywallet_information}>
                 <div className={style.mywallet_information_text}>
                   <h5 className={style.h5_16}>My Near Wallet</h5>
-                  <p1 className={style.p1_16}>{accountId}</p1>
+                  <p className={style.p1_16}>{accountId}</p>
                 </div>
                 <button className={style.button_s} onClick={signOut}>
                   <h5>연결해제</h5>

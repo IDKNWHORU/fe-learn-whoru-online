@@ -92,9 +92,9 @@ export default async function ProfilePage() {
                   <p className="more color-gray-04">모두 보기</p>
                   <Icon
                     src="/icon_arrow_right.png"
-                    alt="more"
                     width={24}
                     height={24}
+                    alt="나의 작업 페이지로 이동하기"
                   />
                 </Link>
               </div>

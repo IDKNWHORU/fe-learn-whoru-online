@@ -7,7 +7,9 @@ import dynamic from "next/dynamic";
 import profilestyle from "./profile.module.css";
 import { Suspense } from "react";
 
-const Avatar = dynamic(() => import("@/components/profile/Avatar"));
+const Avatar = dynamic(() => import("@/components/profile/Avatar"), {
+  loading: () => <div className={profilestyle.avatarLoading} />,
+});
 
 const Application = dynamic(() => import("@/components/profile/Application"));
 
@@ -175,9 +177,7 @@ export default async function ProfilePage() {
       </header>
       <article className="wrapper">
         <div className="frame-76">
-          <Suspense
-            fallback={<div className={profilestyle.avatarLoading}></div>}
-          >
+          <Suspense fallback={<div className={profilestyle.avatarLoading} />}>
             <AvatarPanel />
           </Suspense>
           <div className="frame-42">

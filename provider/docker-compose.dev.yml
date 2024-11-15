@@ -1,0 +1,22 @@
+version: "3.8"
+
+services:
+  nextjs:
+    build:
+      context: .
+      dockerfile: Dockerfile
+      args:
+        NODE_ENV: development
+    ports:
+      - "3000:3000"
+    env_file:
+      - .env
+    volumes:
+      - .:/app
+    environment:
+      - NODE_ENV=development
+    deploy:
+      resources:
+        limits:
+          memory: 2G
+          cpus: "2"

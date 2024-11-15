@@ -4,30 +4,20 @@ import fetchWithRetry from "@/functions/api";
 import Icon from "@/components/Icon";
 import Link from "next/link";
 import dynamic from "next/dynamic";
+import profilestyle from "./profile.module.css";
+import { Suspense } from "react";
 
-const Avatar = dynamic(() => import("@/components/profile/Avatar"), {
-  loading: () => <p>내 정보를 조회하는 중입니다...</p>,
-});
+const Avatar = dynamic(() => import("@/components/profile/Avatar"));
 
-const Mission = dynamic(() => import("@/components/profile/Mission"), {
-  loading: () => <p>미션을 조회하는 중입니다...</p>,
-});
+const Application = dynamic(() => import("@/components/profile/Application"));
 
-const Work = dynamic(() => import("@/components/profile/Work"), {
-  loading: () => <p>작업을 조회하는 중입니다...</p>,
-});
+const Work = dynamic(() => import("@/components/profile/Work"));
 
-const Learning = dynamic(() => import("@/components/profile/Learning"), {
-  loading: () => <p>학습을 조회하는 중입니다...</p>,
-});
+const Mission = dynamic(() => import("@/components/profile/Mission"));
 
-const Application = dynamic(() => import("@/components/profile/Application"), {
-  loading: () => <p>지원서를 조회하는 중입니다...</p>,
-});
+const Learning = dynamic(() => import("@/components/profile/Learning"));
 
-const Reward = dynamic(() => import("@/components/profile/Reward"), {
-  loading: () => <p>보상을 조회하는 중입니다...</p>,
-});
+const Reward = dynamic(() => import("@/components/profile/Reward"));
 
 export async function generateMetadata() {
   const profile = await getProfile();
@@ -52,22 +42,21 @@ export async function getProfile() {
   return await getProfileResopnse.json();
 }
 
-export default async function ProfilePage() {
+async function AvatarPanel() {
+  const profile = await getProfile();
+
+  return <Avatar profile={profile} />;
+}
+
+async function BoardFirst() {
   const profile = await getProfile();
 
   return (
     <>
-      <header className="nb">
-        <BackButton />
-      </header>
-      <article className="wrapper">
-        <div className="frame-76">
-          <Avatar profile={profile} />
-          <div className="frame-42">
-            <div className="frame-34-6 background-white border-gray-06">
-              <div className="frame-35-2">
-                <h4 className="h4-20 color-black">나의 지원서</h4>
-                {/* <Link className="frame-56-2 link" href="/">
+      <div className="frame-34-6 background-white border-gray-06">
+        <div className="frame-35-2">
+          <h4 className="h4-20 color-black">나의 지원서</h4>
+          {/* <Link className="frame-56-2 link" href="/">
                   <p className="more color-gray-04">모두 보기</p>
                   <div className="arrow-right">
                     <div className="frame-78">
@@ -80,98 +69,177 @@ export default async function ProfilePage() {
                     </div>
                   </div>
                 </Link> */}
-              </div>
-              <Application usrId={profile.id} />
-            </div>
-            {/* <div className="frame-44-2"> */}
-            {/* </div> */}
-            <div className="frame-34-6 background-white border-gray-06">
-              <div className="frame-35-2">
-                <h4 className="h4-20 color-black">나의 작업</h4>
-                <Link className="frame-56-2 link" href="/profile/work">
-                  <p className="more color-gray-04">모두 보기</p>
-                  <Icon
-                    src="/icon_arrow_right.png"
-                    width={24}
-                    height={24}
-                    alt="나의 작업 페이지로 이동하기"
-                  />
-                </Link>
-              </div>
-              <Work usrId={profile.id} />
-            </div>
-          </div>
-          {/* <div className="frame-43"> */}
-          <div className="frame-42">
-            {/* <div className="frame-92"> */}
-            {/* <div className="frame-34-7 background-white border-gray-06"> */}
-            <div className="frame-34-6 background-white border-gray-06">
-              <div className="frame-35-2">
-                <h4 className="h4-20 color-black">나의 학습</h4>
-                {/* <div className="frame-9"> */}
-                <Link className="frame-56-2 link" href="/profile/learning">
-                  <p className="more color-gray-04">모두 보기</p>
-                  <Icon
-                    src="/icon_arrow_right.png"
-                    alt="more"
-                    width={24}
-                    height={24}
-                  />
-                </Link>
-                {/* </div> */}
-              </div>
-              {/* <div className="frame-9-2"> */}
-              {/* 전체 달성률 그래프 */}
-              {/* <div className="frame-93-5">
+        </div>
+        <Application usrId={profile.id} />
+      </div>
+      <div className="frame-34-6 background-white border-gray-06">
+        <div className="frame-35-2">
+          <h4 className="h4-20 color-black">나의 작업</h4>
+          <Link className="frame-56-2 link" href="/profile/work">
+            <p className="more color-gray-04">모두 보기</p>
+            <Icon
+              src="/icon_arrow_right.png"
+              width={24}
+              height={24}
+              alt="나의 작업 페이지로 이동하기"
+            />
+          </Link>
+        </div>
+        <Work usrId={profile.id} />
+      </div>
+    </>
+  );
+}
+
+async function BoardSecond() {
+  const profile = await getProfile();
+
+  return (
+    <>
+      <div className="frame-34-6 background-white border-gray-06">
+        <div className="frame-35-2">
+          <h4 className="h4-20 color-black">나의 학습</h4>
+          {/* <div className="frame-9"> */}
+          <Link className="frame-56-2 link" href="/profile/learning">
+            <p className="more color-gray-04">모두 보기</p>
+            <Icon
+              src="/icon_arrow_right.png"
+              alt="more"
+              width={24}
+              height={24}
+            />
+          </Link>
+          {/* </div> */}
+        </div>
+        {/* <div className="frame-9-2"> */}
+        {/* 전체 달성률 그래프 */}
+        {/* <div className="frame-93-5">
             <div className="frame-9-4"></div>
           </div> */}
-              <div className="frame-96">
-                <div className="frame-93-6">
-                  <Learning usrId={profile.id} />
-                </div>
-                {/* </div> */}
-              </div>
-            </div>
-            {/* </div> */}
-            <div className="frame-34-6 background-white border-gray-06">
-              {/* <div className="frame-34-7 background-white border-gray-06"> */}
-              <div className="frame-35-2">
-                <h4 className="h4-20 color-black">나의 미션</h4>
-                <Link className="frame-56-2 link" href="/profile/mission">
-                  <p className="more color-gray-04">모두 보기</p>
-                  <Icon
-                    src="/icon_arrow_right.png"
-                    alt="more"
-                    width={24}
-                    height={24}
-                  />
-                </Link>
-              </div>
-              <Mission usrId={profile.id} />
-            </div>
+        <div className="frame-96">
+          <div className="frame-93-6">
+            <Learning usrId={profile.id} />
+          </div>
+          {/* </div> */}
+        </div>
+      </div>
+      {/* </div> */}
+      <div className="frame-34-6 background-white border-gray-06">
+        {/* <div className="frame-34-7 background-white border-gray-06"> */}
+        <div className="frame-35-2">
+          <h4 className="h4-20 color-black">나의 미션</h4>
+          <Link className="frame-56-2 link" href="/profile/mission">
+            <p className="more color-gray-04">모두 보기</p>
+            <Icon
+              src="/icon_arrow_right.png"
+              alt="more"
+              width={24}
+              height={24}
+            />
+          </Link>
+        </div>
+        <Mission usrId={profile.id} />
+      </div>
+    </>
+  );
+}
+
+async function BoardThird() {
+  const profile = await getProfile();
+
+  return (
+    <div className="frame-34-6 background-white border-gray-06">
+      <div className="frame-35-3">
+        <h4 className="h4-20 color-black">나의 보상</h4>
+        {/* <div className="frame-9"> */}
+        <Link className="frame-56-2 link" href="/profile/reward">
+          <p className="more color-gray-04">모두 보기</p>
+          <Icon src="/icon_arrow_right.png" alt="more" width={24} height={24} />
+        </Link>
+        {/* </div> */}
+      </div>
+      <div className="frame-96">
+        <div className="frame-93-6">
+          <Reward usrId={profile.id} />
+        </div>
+      </div>
+    </div>
+  );
+}
+
+export default async function ProfilePage() {
+  return (
+    <>
+      <header className="nb">
+        <BackButton />
+      </header>
+      <article className="wrapper">
+        <div className="frame-76">
+          <Suspense
+            fallback={<div className={profilestyle.avatarLoading}></div>}
+          >
+            <AvatarPanel />
+          </Suspense>
+          <div className="frame-42">
+            <Suspense
+              fallback={
+                <>
+                  <div className={profilestyle.boardLoading}>
+                    <div className="frame-35-2">
+                      <h4 className="h4-20 color-black">나의 지원서</h4>
+                    </div>
+                  </div>
+                  <div className={profilestyle.boardLoading}>
+                    <div className="frame-35-2">
+                      <h4 className="h4-20 color-black">나의 작업</h4>
+                    </div>
+                  </div>
+                </>
+              }
+            >
+              <BoardFirst />
+            </Suspense>
           </div>
           <div className="frame-42">
-            <div className="frame-34-6 background-white border-gray-06">
-              <div className="frame-35-3">
-                <h4 className="h4-20 color-black">나의 보상</h4>
-                {/* <div className="frame-9"> */}
-                <Link className="frame-56-2 link" href="/profile/reward">
-                  <p className="more color-gray-04">모두 보기</p>
-                  <Icon
-                    src="/icon_arrow_right.png"
-                    alt="more"
-                    width={24}
-                    height={24}
-                  />
-                </Link>
-                {/* </div> */}
-              </div>
-              <div className="frame-96">
-                <div className="frame-93-6">
-                  <Reward usrId={profile.id} />
-                </div>
-              </div>
-            </div>
+            <Suspense
+              fallback={
+                <>
+                  <div className={profilestyle.boardLoading}>
+                    <div className="frame-35-2">
+                      <h4 className="h4-20 color-black">나의 학습</h4>
+                    </div>
+                    <div className="frame-96">
+                      <div className="frame-93-6"></div>
+                    </div>
+                  </div>
+                  <div className={profilestyle.boardLoading}>
+                    <div className="frame-35-2">
+                      <h4 className="h4-20 color-black">나의 미션</h4>
+                    </div>
+                  </div>
+                </>
+              }
+            >
+              <BoardSecond />
+            </Suspense>
+          </div>
+          <div className="frame-42">
+            <Suspense
+              fallback={
+                <>
+                  <div className={profilestyle.boardLoading}>
+                    <div className="frame-35-3">
+                      <h4 className="h4-20 color-black">나의 보상</h4>
+                    </div>
+                    <div className="frame-96">
+                      <div className="frame-93-6"></div>
+                    </div>
+                  </div>
+                </>
+              }
+            >
+              <BoardThird />
+            </Suspense>
           </div>
         </div>
       </article>

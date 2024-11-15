@@ -5,6 +5,7 @@
     "@near-wallet-selector/core": "^8.9.7",
     "@near-wallet-selector/modal-ui": "^8.9.7",
     "@near-wallet-selector/my-near-wallet": "^8.9.7",
+    "@next/bundle-analyzer": "^15.0.3",
     "@toast-ui/editor": "^3.2.2",
     "bn.js": "^5.2.1",
     "dompurify": "^2.3.3",
@@ -15,9 +16,10 @@
     "tui-grid": "^4.21.18"
   },
   "scripts": {
-    "dev": "next dev -p 3001",
+    "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint"
+    "lint": "next lint",
+    "analyze": "ANALYZE=true next build"
   }
 }

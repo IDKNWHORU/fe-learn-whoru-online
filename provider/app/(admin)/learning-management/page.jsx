@@ -9,7 +9,7 @@ export const metadata = {
 };
 
 async function getLearningList() {
-  const getLearningListResponse = await fetchWithRetry(`/learning`);
+  const getLearningListResponse = await fetchWithRetry("/learning");
 
   if (!getLearningListResponse.ok)
     if (getLearningListResponse.status === 404) return [];

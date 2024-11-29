@@ -9,7 +9,7 @@ import { redirect } from "next/navigation";
 export async function createLearning({ title, description }) {
   const cookieStore = cookies();
 
-  const createLearningResponse = await fetchWithRetry(`/learning`, {
+  const createLearningResponse = await fetchWithRetry("/learning", {
     method: HTTP_METHOD.POST,
     body: JSON.stringify({
       title,

@@ -3,7 +3,7 @@ import Link from "next/link";
 import { Fragment } from "react";
 
 async function getAnnouncementList() {
-  const getannouncementsResponse = await fetchWithRetry(`/announcement`);
+  const getannouncementsResponse = await fetchWithRetry("/announcement");
 
   if (!getannouncementsResponse.ok) return [];
 

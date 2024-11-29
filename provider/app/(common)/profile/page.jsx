@@ -7,9 +7,7 @@ import dynamic from "next/dynamic";
 import profilestyle from "./profile.module.css";
 import { Suspense } from "react";
 
-const Avatar = dynamic(() => import("@/components/profile/Avatar"), {
-  loading: () => <div className={profilestyle.avatarLoading} />,
-});
+const Avatar = dynamic(() => import("@/components/profile/Avatar"));
 
 const Application = dynamic(() => import("@/components/profile/Application"));
 
@@ -26,7 +24,6 @@ export async function generateMetadata() {
 
   return {
     title: `${profile.nick} 프로필`,
-    description: `${profile.selfIntro}`,
   };
 }
 
@@ -44,15 +41,11 @@ export async function getProfile() {
   return await getProfileResopnse.json();
 }
 
-async function AvatarPanel() {
-  const profile = await getProfile();
-
+async function AvatarPanel({ profile }) {
   return <Avatar profile={profile} />;
 }
 
-async function BoardFirst() {
-  const profile = await getProfile();
-
+async function BoardFirst({ profile }) {
   return (
     <>
       <div className="frame-34-6 background-white border-gray-06">
@@ -93,9 +86,7 @@ async function BoardFirst() {
   );
 }
 
-async function BoardSecond() {
-  const profile = await getProfile();
-
+async function BoardSecond({ profile }) {
   return (
     <>
       <div className="frame-34-6 background-white border-gray-06">
@@ -146,9 +137,7 @@ async function BoardSecond() {
   );
 }
 
-async function BoardThird() {
-  const profile = await getProfile();
-
+async function BoardThird({ profile }) {
   return (
     <div className="frame-34-6 background-white border-gray-06">
       <div className="frame-35-3">
@@ -170,6 +159,8 @@ async function BoardThird() {
 }
 
 export default async function ProfilePage() {
+  const profile = await getProfile();
+
   return (
     <>
       <header className="nb">
@@ -178,7 +169,7 @@ export default async function ProfilePage() {
       <article className="wrapper">
         <div className="frame-76">
           <Suspense fallback={<div className={profilestyle.avatarLoading} />}>
-            <AvatarPanel />
+            <AvatarPanel profile={profile} />
           </Suspense>
           <div className="frame-42">
             <Suspense
@@ -197,7 +188,7 @@ export default async function ProfilePage() {
                 </>
               }
             >
-              <BoardFirst />
+              <BoardFirst profile={profile} />
             </Suspense>
           </div>
           <div className="frame-42">
@@ -220,25 +211,23 @@ export default async function ProfilePage() {
                 </>
               }
             >
-              <BoardSecond />
+              <BoardSecond profile={profile} />
             </Suspense>
           </div>
           <div className="frame-42">
             <Suspense
               fallback={
-                <>
-                  <div className={profilestyle.boardLoading}>
-                    <div className="frame-35-3">
-                      <h4 className="h4-20 color-black">나의 보상</h4>
-                    </div>
-                    <div className="frame-96">
-                      <div className="frame-93-6"></div>
-                    </div>
+                <div className={profilestyle.boardLoading}>
+                  <div className="frame-35-3">
+                    <h4 className="h4-20 color-black">나의 보상</h4>
                   </div>
-                </>
+                  <div className="frame-96">
+                    <div className="frame-93-6"></div>
+                  </div>
+                </div>
               }
             >
-              <BoardThird />
+              <BoardThird profile={profile} />
             </Suspense>
           </div>
         </div>

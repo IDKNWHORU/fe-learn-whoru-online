@@ -1,6 +1,7 @@
 "use client";
 
 import { CreateAnnouncementApplication } from "@/app/actions/announcement";
+import Button from "@/components/common/Button";
 import dynamic from "next/dynamic";
 import { useRef } from "react";
 import { useFormStatus } from "react-dom";
@@ -11,13 +12,9 @@ const SubmitButton = () => {
   const { pending } = useFormStatus();
 
   return (
-    <button
-      className="button-L-2 background-purple-01 h5-16 color-white"
-      type="submit"
-      disabled={pending}
-    >
+    <Button variant="primary" size="large" type="submit" disabled={pending}>
       {pending ? "지원서를 제출하는 중입니다..." : "제출하기"}
-    </button>
+    </Button>
   );
 };
 

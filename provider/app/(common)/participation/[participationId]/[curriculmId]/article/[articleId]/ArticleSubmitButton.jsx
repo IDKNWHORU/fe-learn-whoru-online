@@ -1,6 +1,7 @@
 "use client";
 
 import { ArticleSubmit } from "@/app/actions/article";
+import Button from "@/components/common/Button";
 
 import { useFormStatus } from "react-dom";
 
@@ -8,9 +9,9 @@ const SubmitButton = () => {
   const { pending } = useFormStatus();
 
   return (
-    <button className="button-L h5-16" type="submit" disabled={pending}>
+    <Button variant="primary" size="large" type="submit" disabled={pending}>
       {pending ? "아티클을 완료하는 중입니다..." : "아티클 완료하기"}
-    </button>
+    </Button>
   );
 };
 

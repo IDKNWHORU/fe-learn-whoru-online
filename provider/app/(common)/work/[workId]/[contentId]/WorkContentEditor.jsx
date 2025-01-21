@@ -1,6 +1,7 @@
 "use client";
 
 import { updateWorkContent } from "@/app/actions/work";
+import Button from "@/components/common/Button";
 import dynamic from "next/dynamic";
 import { useRef } from "react";
 import { useFormStatus } from "react-dom";
@@ -9,20 +10,13 @@ const Editor = dynamic(() => import("@/components/Editor"), {
   ssr: false,
 });
 
-const SubmitButton = ({ isEditor }) => {
+const SubmitButton = () => {
   const { pending } = useFormStatus();
 
   return (
-    <button
-      className="button-L-2 background-purple-01 h5-16 color-white"
-      disabled={!isEditor ? true : pending}
-    >
-      {!isEditor
-        ? "작업자만 저장할 수 있습니다"
-        : pending
-        ? "저장하는 중입니다..."
-        : "저장하기"}
-    </button>
+    <Button variant="primary" size="large" type="submit" disabled={pending}>
+      {pending ? "저장하는 중입니다..." : "저장하기"}
+    </Button>
   );
 };
 
@@ -75,7 +69,13 @@ export default function WorkContentEditor({ detailContent, isEditor }) {
         </div>
       </div>
       <div className="frame-157">
-        <SubmitButton isEditor={isEditor} />
+        {!isEditor ? (
+          <Button variant="secondary" size="large" disabled={true}>
+            작업자만 저장할 수 있습니다
+          </Button>
+        ) : (
+          <SubmitButton />
+        )}
       </div>
     </form>
   );

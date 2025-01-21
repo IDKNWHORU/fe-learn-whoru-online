@@ -855,7 +855,7 @@
 }
 
 .content-buttons > form > button {
-  width: 50px;
+  width: 62px;
   height: 30px;
   border: none;
   background: var(--white);
@@ -863,10 +863,6 @@
 
 .content-buttons > form > button:hover {
   background: var(--gray06);
-}
-
-.content-buttons > form:nth-child(2) > button {
-  width: 72px;
 }
 
 .comment-editor,

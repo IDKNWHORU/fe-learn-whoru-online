@@ -1,0 +1,85 @@
+.button {
+  border: none;
+  cursor: pointer;
+  border-radius: 40px;
+  font-family: var(--font-pretendard);
+  font-style: var(--h5-16-font-style);
+  font-weight: var(--h5-16-font-weight);
+  font-size: var(--h5-16-font-size);
+  line-height: 26px;
+}
+
+.small {
+  padding: 8px 20px;
+  height: 36px;
+}
+
+.medium {
+  padding: 12px 30px;
+  height: 48px;
+}
+
+.large {
+  width: clamp(200px, 100%, 320px);
+  padding: 19px 36px;
+}
+
+.primary {
+  background: var(--purple01);
+  color: var(--white);
+}
+.primary:hover {
+  background: var(--purple02);
+}
+
+.secondary {
+  background: var(--gray06);
+  color: var(--gray02);
+}
+.secondary:hover {
+  background: var(--gray05);
+}
+
+.ghost {
+  background: transparent;
+  color: var(--gray02);
+}
+.ghost:hover {
+  background: var(--gray06);
+}
+
+.icon {
+  margin-right: 8px;
+  display: inline-flex;
+  align-items: center;
+}
+
+.red {
+  color: var(--alert);
+}
+
+.blue {
+  color: var(--info);
+}
+.purple {
+  color: var(--purple01);
+}
+.grayed {
+  color: var(--gray04);
+}
+
+.caption {
+  font-family: var(--font-pretendard);
+  font-size: 12px;
+  line-height: 14px;
+}
+
+.h4_20 {
+  margin: 0;
+  font-family: var(--font-pretendard);
+  font-size: var(--h4-20-font-size);
+  font-style: var(--h4-20-font-style);
+  font-weight: var(--h4-20-font-weight);
+  line-height: var(--h4-20-line-height);
+  letter-spacing: var(--h4-20-letter-spacing);
+}

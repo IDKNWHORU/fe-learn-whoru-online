@@ -1,16 +1,18 @@
 "use client";
 
 import { createWorkContentComment } from "@/app/actions/work";
+import Button from "@/components/common/Button";
 import Editor from "@/components/Editor";
 import { useRef } from "react";
 import { useFormStatus } from "react-dom";
 
 const SubmitButton = () => {
   const { pending } = useFormStatus();
+
   return (
-    <button className="button-L-2 h5-16" disabled={pending}>
+    <Button variant="primary" size="large" type="submit" disabled={pending}>
       {pending ? "댓글을 작성하는 중입니다..." : "작성하기"}
-    </button>
+    </Button>
   );
 };
 

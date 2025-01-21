@@ -1,6 +1,7 @@
 "use client";
 
 import { createContent } from "@/app/actions/content";
+import Button from "@/components/common/Button";
 import COMMUNITY_TYPE from "@/enums/COMMUNITY_TYPE";
 import { uploadImage } from "@/functions/actions/ImageUpload";
 import ko_kr from "@/langs/ko_kr";
@@ -15,12 +16,9 @@ const SubmitButton = () => {
   const { pending } = useFormStatus();
 
   return (
-    <button
-      className="button-L-2 background-purple-01 h5-16 color-white"
-      disabled={pending}
-    >
+    <Button variant="primary" size="large" type="submit">
       {pending ? "저장하는 중입니다..." : "저장하기"}
-    </button>
+    </Button>
   );
 };
 

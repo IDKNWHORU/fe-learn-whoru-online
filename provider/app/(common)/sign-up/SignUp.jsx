@@ -8,13 +8,15 @@ import { useRouter } from "next/navigation";
 import { useRef, useState } from "react";
 import { useFormStatus } from "react-dom";
 import signupstyle from "./signup.module.css";
+import Button from "@/components/common/Button";
 
 const Editor = dynamic(() => import("@/components/Editor"), { ssr: false });
 
 const SubmitButton = () => {
   const { pending } = useFormStatus();
+
   return (
-    <button className={signupstyle.signupButton} disabled={pending}>
+    <Button variant="primary" size="large" type="submit" disabled={pending}>
       {pending ? (
         <>
           회원가입을 처리 중입니다...
@@ -24,7 +26,7 @@ const SubmitButton = () => {
       ) : (
         "지금 바로 가입하기 🚀"
       )}
-    </button>
+    </Button>
   );
 };
 

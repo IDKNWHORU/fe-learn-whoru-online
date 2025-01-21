@@ -134,7 +134,9 @@ async function ContentCoomentList({ contentId }) {
       </div>
       <div className="frame-143">
         {comments.map((contentComment, index) => (
-          <Fragment key={contentComment.contentId}>
+          <Fragment
+            key={`${contentComment.contentId}-${contentComment.createAt}`}
+          >
             <section className="frame-142">
               <div className="frame-140">
                 <div className="frame-10">

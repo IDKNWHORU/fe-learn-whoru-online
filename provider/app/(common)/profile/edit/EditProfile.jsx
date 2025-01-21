@@ -8,6 +8,7 @@ import Link from "next/link";
 import { useRef, useState } from "react";
 import { useFormStatus } from "react-dom";
 import editprofilestyle from "./editprofile.module.css";
+import Button from "@/components/common/Button";
 
 const Editor = dynamic(() => import("@/components/Editor"), { ssr: false });
 
@@ -15,7 +16,7 @@ const SubmitButton = () => {
   const { pending } = useFormStatus();
 
   return (
-    <button className={editprofilestyle.editProfileButton} disabled={pending}>
+    <Button variant="primary" size="large" type="submit" disabled={pending}>
       {pending ? (
         <>
           프로필을 업데이트 중입니다...
@@ -25,7 +26,7 @@ const SubmitButton = () => {
       ) : (
         "프로필 저장"
       )}
-    </button>
+    </Button>
   );
 };
 

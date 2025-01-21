@@ -4,21 +4,25 @@ import {
   cancleRecommendContent,
   recommendContent,
 } from "@/app/actions/content";
+import Button from "@/components/common/Button";
+import style from "@/components/common/button.module.css";
 import { useFormStatus } from "react-dom";
 
 const SubmitButton = ({ isContentRecommendExist }) => {
   const { pending } = useFormStatus();
 
   return (
-    <button
-      className={`button2 caption-12 ${
-        isContentRecommendExist ? "color-blue" : "color-gray-04"
+    <Button
+      variant="ghost"
+      size="small"
+      className={`${style.caption} ${
+        isContentRecommendExist ? style.blue : style.grayed
       }`}
       type="submit"
       disabled={pending}
     >
       추천
-    </button>
+    </Button>
   );
 };
 

@@ -1,23 +1,22 @@
 "use client";
 
 import { createWorkContent } from "@/app/actions/work";
-import Icon from "@/components/Icon";
+import Button from "@/components/common/Button";
 import { useFormStatus } from "react-dom";
 
 const SubmitButton = () => {
   const { pending } = useFormStatus();
+
   return (
-    <button className="button-M" type="submit" disabled={pending}>
-      <Icon
-        src="/icon_plus_white.png"
-        alt="작업물 추가"
-        width={24}
-        height={24}
-      />
-      <p className="h5-16 color-white">
-        {pending ? "추가중..." : "작업물 추가"}
-      </p>
-    </button>
+    <Button
+      variant="primary"
+      size="medium"
+      type="submit"
+      icon="/icon_plus_white.png"
+      disabled={pending}
+    >
+      {pending ? "추가중..." : "작업물 추가"}
+    </Button>
   );
 };
 

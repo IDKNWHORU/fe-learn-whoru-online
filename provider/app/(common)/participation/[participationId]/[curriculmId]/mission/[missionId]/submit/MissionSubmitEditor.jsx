@@ -1,6 +1,7 @@
 "use client";
 
 import { MissionSubmit } from "@/app/actions/mission";
+import Button from "@/components/common/Button";
 import HTTP_METHOD from "@/enums/HTTP_METHOD";
 import dynamic from "next/dynamic";
 import { useRef } from "react";
@@ -12,9 +13,9 @@ const SubmitButton = () => {
   const { pending } = useFormStatus();
 
   return (
-    <button className="button1 h5-16 button-L" type="submit" disabled={pending}>
+    <Button variant="primary" size="large" type="submit" disabled={pending}>
       {pending ? "제출하는 중입니다..." : "제출하기"}
-    </button>
+    </Button>
   );
 };
 

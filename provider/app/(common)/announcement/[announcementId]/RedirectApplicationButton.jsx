@@ -1,5 +1,6 @@
 "use client";
 
+import Button from "@/components/common/Button";
 import APPLY_CATEGORY from "@/enums/APPLY_CATEGORY";
 import { useRouter } from "next/navigation";
 
@@ -17,15 +18,14 @@ export default function RedirectApplicationButton({
   };
 
   return (
-    <button
-      className="button-S background-purple-01"
+    <Button
+      variant="primary"
+      size="small"
       type="button"
       onClick={handleRedirectApplication}
       disabled={isClosed}
     >
-      <h4 className="h5-16 color-white">
-        {isClosed ? "마감되었습니다" : "지원하기"}
-      </h4>
-    </button>
+      {isClosed ? "마감되었습니다" : "지원하기"}
+    </Button>
   );
 }

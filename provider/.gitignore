@@ -131,3 +131,11 @@ dist
 graphql_schema.json
 .graphql_cache
 .graphql_ppx_cache
+
+# Playwright
+/test-results/
+/playwright-report/
+/blob-report/
+/playwright/.cache/
+
+/e2e/auth.json

@@ -1,6 +1,7 @@
 "use client";
 
 import { updateContent } from "@/app/actions/content";
+import Button from "@/components/common/Button";
 import { uploadImage } from "@/functions/actions/ImageUpload";
 import dynamic from "next/dynamic";
 import Image from "next/image";
@@ -13,13 +14,9 @@ const SubmitButton = () => {
   const { pending } = useFormStatus();
 
   return (
-    <button
-      className="button-L-2 background-purple-01 h5-16 color-white"
-      type="submit"
-      disabled={pending}
-    >
+    <Button variant="primary" size="large" type="submit">
       {pending ? "수정하는 중입니다..." : "수정하기"}
-    </button>
+    </Button>
   );
 };
 

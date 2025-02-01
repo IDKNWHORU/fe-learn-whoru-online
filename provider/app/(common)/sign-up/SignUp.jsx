@@ -8,7 +8,7 @@ import { useRouter } from "next/navigation";
 import { useRef, useState } from "react";
 import { useFormStatus } from "react-dom";
 import signupstyle from "./signup.module.css";
-import Button from "@/components/common/Button";
+import Button from "@/components/common/button";
 
 const Editor = dynamic(() => import("@/components/Editor"), { ssr: false });
 

@@ -1,7 +1,7 @@
 "use client";
 
 import { submitWorkContent } from "@/app/actions/work";
-import Button from "@/components/common/Button";
+import Button from "@/components/common/button";
 import style from "@/components/common/button.module.css";
 import WORK_CONTENT_STATUS from "@/enums/WORK_CONTENT_STATUS";
 import { useFormStatus } from "react-dom";

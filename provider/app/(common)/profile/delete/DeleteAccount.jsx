@@ -1,7 +1,7 @@
 "use client";
 
 import { deleteAccount } from "@/app/actions/account";
-import Button from "@/components/common/Button";
+import Button from "@/components/common/button";
 import { useRouter } from "next/navigation";
 import { useFormStatus } from "react-dom";
 

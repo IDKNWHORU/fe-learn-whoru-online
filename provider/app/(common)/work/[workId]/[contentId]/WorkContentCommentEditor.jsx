@@ -1,7 +1,7 @@
 "use client";
 
 import { createWorkContentComment } from "@/app/actions/work";
-import Button from "@/components/common/Button";
+import Button from "@/components/common/button";
 import Editor from "@/components/Editor";
 import { useRef } from "react";
 import { useFormStatus } from "react-dom";

@@ -1,7 +1,7 @@
 "use client";
 
 import { MissionSubmit } from "@/app/actions/mission";
-import Button from "@/components/common/Button";
+import Button from "@/components/common/button";
 import HTTP_METHOD from "@/enums/HTTP_METHOD";
 import dynamic from "next/dynamic";
 import { useRef } from "react";

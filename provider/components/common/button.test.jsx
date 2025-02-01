@@ -1,7 +1,6 @@
-// components/common/Button.test.jsx
 import React from "react";
 import { render, screen, fireEvent } from "@testing-library/react";
-import Button from "./Button";
+import Button from "./button";
 
 describe("Button 컴포넌트 테스트", () => {
   it("버튼이 올바른 텍스트를 가지고 렌더링되어야 한다.", () => {

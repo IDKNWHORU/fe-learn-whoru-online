@@ -1,7 +1,7 @@
 "use client";
 
 import { updateContent } from "@/app/actions/content";
-import Button from "@/components/common/Button";
+import Button from "@/components/common/button";
 import { uploadImage } from "@/functions/actions/ImageUpload";
 import dynamic from "next/dynamic";
 import Image from "next/image";

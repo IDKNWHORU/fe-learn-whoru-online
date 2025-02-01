@@ -1,6 +1,6 @@
 "use client";
 
-import Button from "@/components/common/Button";
+import Button from "@/components/common/button";
 import APPLY_CATEGORY from "@/enums/APPLY_CATEGORY";
 import { useRouter } from "next/navigation";
 

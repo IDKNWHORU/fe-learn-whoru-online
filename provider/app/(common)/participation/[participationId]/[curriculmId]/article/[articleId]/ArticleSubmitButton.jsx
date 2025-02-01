@@ -1,7 +1,7 @@
 "use client";
 
 import { ArticleSubmit } from "@/app/actions/article";
-import Button from "@/components/common/Button";
+import Button from "@/components/common/button";
 
 import { useFormStatus } from "react-dom";
 

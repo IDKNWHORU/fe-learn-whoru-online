@@ -4,7 +4,7 @@ import {
   cancleRecommendContent,
   recommendContent,
 } from "@/app/actions/content";
-import Button from "@/components/common/Button";
+import Button from "@/components/common/button";
 import style from "@/components/common/button.module.css";
 import { useFormStatus } from "react-dom";
 

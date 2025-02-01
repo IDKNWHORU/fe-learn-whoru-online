@@ -1,7 +1,7 @@
 "use client";
 
 import { CreateMissionComment } from "@/app/actions/mission";
-import Button from "@/components/common/Button";
+import Button from "@/components/common/button";
 import dynamic from "next/dynamic";
 import Link from "next/link";
 import { useRef } from "react";

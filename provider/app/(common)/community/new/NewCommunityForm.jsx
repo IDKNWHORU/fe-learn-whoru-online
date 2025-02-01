@@ -1,7 +1,7 @@
 "use client";
 
 import { createContent } from "@/app/actions/content";
-import Button from "@/components/common/Button";
+import Button from "@/components/common/button";
 import COMMUNITY_TYPE from "@/enums/COMMUNITY_TYPE";
 import { uploadImage } from "@/functions/actions/ImageUpload";
 import ko_kr from "@/langs/ko_kr";

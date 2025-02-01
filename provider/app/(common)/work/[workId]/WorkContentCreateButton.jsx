@@ -1,7 +1,7 @@
 "use client";
 
 import { createWorkContent } from "@/app/actions/work";
-import Button from "@/components/common/Button";
+import Button from "@/components/common/button";
 import { useFormStatus } from "react-dom";
 
 const SubmitButton = () => {

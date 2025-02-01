@@ -1,7 +1,7 @@
 "use client";
 
 import { deleteContent } from "@/app/(admin)/community-management/actions";
-import Button from "@/components/common/Button";
+import Button from "@/components/common/button";
 import { useFormStatus } from "react-dom";
 import style from "@/components/common/button.module.css";
 

@@ -1,7 +1,7 @@
 "use client";
 
 import { updateAnnouncementApplication } from "@/app/actions/announcement";
-import Button from "@/components/common/Button";
+import Button from "@/components/common/button";
 import dynamic from "next/dynamic";
 import { useRef } from "react";
 import { useFormStatus } from "react-dom";

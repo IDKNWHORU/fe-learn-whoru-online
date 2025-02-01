@@ -2,6 +2,7 @@
 
 import { allocateCoWorker, releaseCoWorker } from "@/app/actions/work";
 import { ClientSideDataGrid } from "@/components/ClientSideComponent";
+import Input from "@/components/common/input";
 import Button from "@/components/datagrid/Button";
 import { ProfileLink } from "@/components/datagrid/Link";
 import HTTP_METHOD from "@/enums/HTTP_METHOD";
@@ -86,7 +87,7 @@ export default function CoWorkerDataGrid({ workId, coWorkers, users }) {
         data={coWorkers}
       />
       <form ref={allocateCoWorkerFormRef} action={handleAllocateCoWorker}>
-        <input type="hidden" name="usrId" />
+        <Input type="hidden" name="usrId" />
       </form>
       <h2 className="h3-24">회원 목록</h2>
       <ClientSideDataGrid
@@ -119,7 +120,7 @@ export default function CoWorkerDataGrid({ workId, coWorkers, users }) {
         data={users}
       />
       <form ref={releaseCoWorkerFormRef} action={handleReleaseCoWorker}>
-        <input type="hidden" name="usrId" />
+        <Input type="hidden" name="usrId" />
       </form>
     </>
   );

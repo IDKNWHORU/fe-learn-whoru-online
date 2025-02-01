@@ -9,6 +9,7 @@ import { useRef, useState } from "react";
 import { useFormStatus } from "react-dom";
 import editprofilestyle from "./editprofile.module.css";
 import Button from "@/components/common/button";
+import Input from "@/components/common/input";
 
 const Editor = dynamic(() => import("@/components/Editor"), { ssr: false });
 
@@ -131,49 +132,30 @@ export default function EditProfile({ profile }) {
               />
             </div>
           </div>
-          <div className={editprofilestyle.eidtProfileInputFieldSet}>
-            <label className={editprofilestyle.editProfileLabel} htmlFor="nick">
-              닉네임 *
-            </label>
-            <input
-              className={editprofilestyle.editProfileInputField}
-              type="text"
-              name="nick"
-              id="nick"
-              placeholder="사용할 닉네임을 입력하세요. 예: 루덴스 ✨"
-              defaultValue={profile.nick}
-              maxLength={30}
-              autoComplete="off"
-            />
-            <ul className={editprofilestyle.editProfileHintList}>
-              <li>닉네임은 30자를 초과할 수 없습니다</li>
-            </ul>
-          </div>
-          <div className={editprofilestyle.eidtProfileInputFieldSet}>
-            <label
-              className={editprofilestyle.editProfileLabel}
-              htmlFor="phone_number"
-            >
+          <Input
+            type="text"
+            placeholder="사용할 닉네임을 입력하세요. 예: 루덴스 ✨"
+            label="닉네임 *"
+            name="nick"
+            id="nick"
+            defaultValue={profile.nick}
+            maxLength={30}
+            autoComplete="off"
+            hint="닉네임은 30자를 초과할 수 없습니다"
+          />
+          <Input
+            type="tel"
+            placeholder="휴대폰 번호를 입력해 주세요. 예: 01012345678 📞"
+            label="
               핸드폰번호 *
-            </label>
-            <input
-              className={editprofilestyle.editProfileInputField}
-              type="tel"
-              name="phone_number"
-              id="phone_number"
-              placeholder="휴대폰 번호를 입력해 주세요. 예: 01012345678 📞"
-              defaultValue={profile.phnNmb}
-              maxLength={11}
-              autoComplete="off"
-            />
-            <ul className={editprofilestyle.editProfileHintList}>
-              <li>
-                휴대폰 번호는 '010', '011', '016', '017', '018', '019'로
-                시작해야 합니다
-              </li>
-              <li>하이픈(-) 없이 숫자만 입력해 주세요. 예: 01012345678</li>
-            </ul>
-          </div>
+              "
+            name="phone_number"
+            id="phone_number"
+            defaultValue={profile.phnNmb}
+            maxLength={11}
+            autoComplete="off"
+            hint="하이픈(-) 없이 숫자만 입력해 주세요. 예: 01012345678"
+          />
           <div className={editprofilestyle.eidtProfileInputFieldSet}>
             <label className={editprofilestyle.editProfileLabel}>
               자기소개

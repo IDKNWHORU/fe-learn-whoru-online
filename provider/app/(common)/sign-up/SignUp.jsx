@@ -9,6 +9,7 @@ import { useRef, useState } from "react";
 import { useFormStatus } from "react-dom";
 import signupstyle from "./signup.module.css";
 import Button from "@/components/common/button";
+import Input from "@/components/common/input";
 
 const Editor = dynamic(() => import("@/components/Editor"), { ssr: false });
 
@@ -127,44 +128,26 @@ export default function SignUp() {
               />
             </div>
           </div>
-          <div className={signupstyle.signupInputFieldSet}>
-            <label className={signupstyle.signupLabel} htmlFor="nick">
-              닉네임 *
-            </label>
-            <input
-              className={signupstyle.signupInputField}
-              type="text"
-              name="nick"
-              id="nick"
-              placeholder="사용할 닉네임을 입력하세요. 예: 루덴스 ✨"
-              maxLength={30}
-              autoComplete="off"
-            />
-            <ul className={signupstyle.signupHintList}>
-              <li>닉네임은 30자를 초과할 수 없습니다</li>
-            </ul>
-          </div>
-          <div className={signupstyle.signupInputFieldSet}>
-            <label className={signupstyle.signupLabel} htmlFor="phone_number">
-              핸드폰번호 *
-            </label>
-            <input
-              className={signupstyle.signupInputField}
-              type="tel"
-              name="phone_number"
-              id="phone_number"
-              placeholder="휴대폰 번호를 입력해 주세요. 예: 01012345678 📞"
-              maxLength={11}
-              autoComplete="off"
-            />
-            <ul className={signupstyle.signupHintList}>
-              <li>
-                휴대폰 번호는 '010', '011', '016', '017', '018', '019'로
-                시작해야 합니다
-              </li>
-              <li>하이픈(-) 없이 숫자만 입력해 주세요. 예: 01012345678</li>
-            </ul>
-          </div>
+          <Input
+            type="text"
+            placeholder="사용할 닉네임을 입력하세요. 예: 루덴스 ✨"
+            label="닉네임 *"
+            name="nick"
+            id="nick"
+            maxLength={30}
+            autoComplete="off"
+            hint="닉네임은 30자를 초과할 수 없습니다"
+          />
+          <Input
+            type="tel"
+            placeholder="휴대폰 번호를 입력해 주세요. 예: 01012345678 📞"
+            label="핸드폰번호 *"
+            name="phone_number"
+            id="phone_number"
+            maxLength={11}
+            autoComplete="off"
+            hint="하이픈(-) 없이 숫자만 입력해 주세요. 예: 01012345678"
+          />
           <div className={signupstyle.signupInputFieldSet}>
             <label className={signupstyle.signupLabel}>자기소개</label>
             <div className={signupstyle.signupTextAreaField}>

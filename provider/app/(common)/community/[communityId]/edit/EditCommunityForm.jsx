@@ -2,6 +2,7 @@
 
 import { updateContent } from "@/app/actions/content";
 import Button from "@/components/common/button";
+import Input from "@/components/common/input";
 import { uploadImage } from "@/functions/actions/ImageUpload";
 import dynamic from "next/dynamic";
 import Image from "next/image";
@@ -62,20 +63,15 @@ export default function EditCommunityForm({ content }) {
 
   return (
     <form className="frame-116" action={handleUpdateContent}>
-      <div className="input-2">
-        <label htmlFor="title" className="h5-16 color-gray-03">
-          제목
-        </label>
-        <input
-          className="frame-102-3 background-white border-gray-05 p1-18 color-gray-04"
-          type="text"
-          placeholder="제목을 입력해주세요"
-          name="title"
-          id="title"
-          defaultValue={content.title}
-          onKeyDown={handleIgnoreEnterKeyDown}
-        />
-      </div>
+      <Input
+        type="text"
+        placeholder="제목을 입력해주세요"
+        label="제목"
+        name="title"
+        id="title"
+        defaultValue={content.title}
+        onKeyDown={handleIgnoreEnterKeyDown}
+      />
       <div className="input-2">
         <label htmlFor="banner" className="h5-16 color-gray-03">
           배너

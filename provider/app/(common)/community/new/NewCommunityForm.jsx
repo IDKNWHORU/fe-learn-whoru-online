@@ -2,6 +2,7 @@
 
 import { createContent } from "@/app/actions/content";
 import Button from "@/components/common/button";
+import Input from "@/components/common/input";
 import COMMUNITY_TYPE from "@/enums/COMMUNITY_TYPE";
 import { uploadImage } from "@/functions/actions/ImageUpload";
 import ko_kr from "@/langs/ko_kr";
@@ -64,33 +65,19 @@ export default function NewCommunityForm() {
 
   return (
     <form className="frame-116" action={handleCreateContent}>
-      <div className="input-2">
-        <label className="h5-16 color-gray-03" htmlFor="title">
-          제목
-        </label>
-        <input
-          className="frame-102-3 background-white border-gray-05 p1-18 color-gray-04"
-          type="text"
-          placeholder="제목을 입력해주세요"
-          name="title"
-          id="title"
-          onKeyDown={handleIgnoreEnterKeyDown}
-        />
-      </div>
-      <div className="input-2">
-        <label className="h5-16 color-gray-03" htmlFor="type">
-          유형
-        </label>
-        <select
-          className="frame-102-3 background-white border-gray-05 p1-18 color-gray-04"
-          name="type"
-          id="type"
-        >
-          <option value={COMMUNITY_TYPE.CONTENT}>{ko_kr.CONTENT}</option>
-          <option value={COMMUNITY_TYPE.QUESTION}>{ko_kr.QUESTION}</option>
-          <option value={COMMUNITY_TYPE.FREE}>{ko_kr.FREE}</option>
-        </select>
-      </div>
+      <Input
+        type="text"
+        placeholder="제목을 입력해주세요"
+        label="제목"
+        name="title"
+        id="title"
+        onKeyDown={handleIgnoreEnterKeyDown}
+      />
+      <Input type="select" label="유형" name="type" id="type">
+        <option value={COMMUNITY_TYPE.CONTENT}>{ko_kr.CONTENT}</option>
+        <option value={COMMUNITY_TYPE.QUESTION}>{ko_kr.QUESTION}</option>
+        <option value={COMMUNITY_TYPE.FREE}>{ko_kr.FREE}</option>
+      </Input>
       <div className="input-2">
         <label className="h5-16 color-gray-03" htmlFor="banner">
           배너

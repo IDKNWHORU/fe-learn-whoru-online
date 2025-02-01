@@ -2,6 +2,7 @@
 
 import { updateWorkContent } from "@/app/actions/work";
 import Button from "@/components/common/button";
+import Input from "@/components/common/input";
 import dynamic from "next/dynamic";
 import { useRef } from "react";
 import { useFormStatus } from "react-dom";
@@ -44,20 +45,15 @@ export default function WorkContentEditor({ detailContent, isEditor }) {
 
   return (
     <form className="frame-116" action={handleEditWorkContent}>
-      <div className="input-2">
-        <label className="h5-16 color-gray-03" htmlFor="title">
-          제목
-        </label>
-        <input
-          className="frame-102-3 background-white border-gray-05 p1-18 color-gray-04"
-          type="text"
-          placeholder="제목을 입력해주세요"
-          name="title"
-          id="title"
-          defaultValue={detailContent.title}
-          onKeyDown={handleIgnoreEnterKeyDown}
-        />
-      </div>
+      <Input
+        type="text"
+        placeholder="제목을 입력해주세요"
+        label="제목"
+        name="title"
+        id="title"
+        defaultValue={detailContent.title}
+        onKeyDown={handleIgnoreEnterKeyDown}
+      />
       <div className="input-2">
         <p className="h5-16 color-gray-03">내용</p>
         <div className="frame-102-4 background-white content-editor">

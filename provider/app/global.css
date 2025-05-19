@@ -84,6 +84,10 @@
   gap: 16px;
 }
 
+.gnb-menu-2.active {
+  background: var(--purple02);
+}
+
 .gnb-menu-2:hover {
   background: var(--purple04);
 }

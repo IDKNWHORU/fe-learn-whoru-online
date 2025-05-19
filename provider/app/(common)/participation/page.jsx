@@ -7,23 +7,21 @@ const LearningList = dynamic(() => import("./LearningList"), {
 
 export const metadata = {
   metadataBase: process.env.NEXT_PUBLIC_SITE_MAP_URL,
-  title: "웹 3.0 프로젝트 학습 참여",
-  description:
-    "웹 3.0 기반의 평등한 참여와 학습으로 보상 받는 커뮤니티를 경험하세요.",
+  title: "학습 참여",
+  description: "평등한 참여와 학습으로 보상 받는 커뮤니티를 경험하세요.",
   openGraph: {
-    title: "웹 3.0 프로젝트 학습 참여",
-    description:
-      "웹 3.0 기반의 평등한 참여와 학습으로 보상 받는 커뮤니티를 경험하세요.",
+    title: "학습 참여",
+    description: "평등한 참여와 학습으로 보상 받는 커뮤니티를 경험하세요.",
     url: process.env.NEXT_PUBLIC_SITE_MAP_URL,
-    siteName: "루디움",
-    locale: "ko_KR",
+    siteName: process.env.NEXT_PUBLIC_SITE_NAME,
+    locale: process.env.NEXT_PUBLIC_LOCALE,
     type: "website",
     images: [
       {
-        url: "logo1.png",
+        url: process.env.NEXT_PUBLIC_OPEN_GRAPH_IMAGE_URL,
         width: 70,
         height: 32,
-        alt: "루디움",
+        alt: process.env.NEXT_PUBLIC_SITE_NAME,
       },
     ],
   },

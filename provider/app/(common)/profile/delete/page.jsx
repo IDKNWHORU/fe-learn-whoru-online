@@ -15,7 +15,7 @@ export default async function DeleteAccountPage() {
           <div className="frame background-white border-gray-06">
             <div className="frame-101">
               <p>
-                본 약관은 회원님이 루디움의 회원 탈퇴를 신청할 경우 적용되는
+                본 약관은 회원님이 공방의 회원 탈퇴를 신청할 경우 적용되는
                 조건과 절차에 대해 설명합니다. 탈퇴 절차를 진행하기 전에{" "}
                 <span className="color-alert">아래의 내용을</span> 주의 깊게
                 읽어주시기 바랍니다.
@@ -63,7 +63,7 @@ export default async function DeleteAccountPage() {
                 <ul>
                   <li>
                     탈퇴 과정에서 회원님의 개인 정보와 관련된 모든 데이터는
-                    루디움의{" "}
+                    공방의{" "}
                     <span className="color-alert">데이터베이스에서 삭제</span>
                     됩니다. 이는 개인정보 보호 및 데이터 보안을 위한 조치입니다.
                   </li>

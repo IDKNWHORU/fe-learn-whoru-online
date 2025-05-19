@@ -6,22 +6,21 @@ import Link from "next/link";
 
 export const metadata = {
   metadataBase: process.env.NEXT_PUBLIC_SITE_MAP_URL,
-  title: "루디움",
-  description: "루디움: 웹 3.0 기반 플랫폼, 자유와 커뮤니티 중심, 데이터 주권",
+  title: process.env.NEXT_PUBLIC_SITE_NAME,
+  description: process.env.NEXT_PUBLIC_SITE_DESCRIPTION,
   openGraph: {
-    title: "루디움",
-    description:
-      "루디움: 웹 3.0 기반 플랫폼, 자유와 커뮤니티 중심, 데이터 주권",
+    title: process.env.NEXT_PUBLIC_SITE_NAME,
+    description: process.env.NEXT_PUBLIC_SITE_DESCRIPTION,
     url: process.env.NEXT_PUBLIC_SITE_MAP_URL,
-    siteName: "루디움",
-    locale: "ko_KR",
+    siteName: process.env.NEXT_PUBLIC_SITE_NAME,
+    locale: process.env.NEXT_PUBLIC_LOCALE,
     type: "website",
     images: [
       {
         url: "logo1.png",
         width: 70,
         height: 32,
-        alt: "루디움",
+        alt: process.env.NEXT_PUBLIC_SITE_NAME,
       },
     ],
   },

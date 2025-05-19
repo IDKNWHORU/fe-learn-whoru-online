@@ -3,23 +3,23 @@ import signupstyle from "./signup.module.css";
 
 export const metadata = {
   metadataBase: process.env.NEXT_PUBLIC_SITE_MAP_URL,
-  title: "루디움 회원가입",
+  title: "회원가입",
   description:
-    "Web 3.0 기술과 블록체인 지식을 배우고 싶다면, 지금 루디움에 가입해 보세요. 함께 성장해요.",
+    "기술과 IT 지식을 배우고 싶다면, 지금 가입해 보세요. 함께 성장해요.",
   openGraph: {
-    title: "루디움 회원가입",
+    title: "회원가입",
     description:
-      "Web 3.0 기술과 블록체인 지식을 배우고 싶다면, 지금 루디움에 가입해 보세요. 함께 성장해요.",
+      "기술과 IT 지식을 배우고 싶다면, 지금 가입해 보세요. 함께 성장해요.",
     url: process.env.NEXT_PUBLIC_SITE_MAP_URL,
-    siteName: "루디움",
-    locale: "ko_KR",
+    siteName: process.env.NEXT_PUBLIC_SITE_NAME,
+    locale: process.env.NEXT_PUBLIC_LOCALE,
     type: "website",
     images: [
       {
-        url: "logo1.png",
+        url: process.env.NEXT_PUBLIC_OPEN_GRAPH_IMAGE_URL,
         width: 70,
         height: 32,
-        alt: "루디움 로고",
+        alt: process.env.NEXT_PUBLIC_SITE_NAME,
       },
     ],
   },

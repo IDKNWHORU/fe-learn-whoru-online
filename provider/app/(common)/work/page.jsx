@@ -6,23 +6,23 @@ const WorkList = dynamic(() => import("./WorkList"), {
 });
 
 export const metadata = {
-  title: "웹 3.0 프로젝트 작업",
+  title: "작업",
   description:
-    "웹 3.0 프로젝트에 기여하고, 자유롭고 평등한 커뮤니티에서 보상을 경험하세요.",
+    "프로젝트에 기여하고, 자유롭고 평등한 커뮤니티에서 보상을 경험하세요.",
   openGraph: {
-    title: "웹 3.0 프로젝트 작업",
+    title: "작업",
     description:
-      "웹 3.0 프로젝트에 기여하고, 자유롭고 평등한 커뮤니티에서 보상을 경험하세요.",
+      "프로젝트에 기여하고, 자유롭고 평등한 커뮤니티에서 보상을 경험하세요.",
     url: process.env.NEXT_PUBLIC_SITE_MAP_URL,
-    siteName: "루디움",
-    locale: "ko_KR",
+    siteName: process.env.NEXT_PUBLIC_SITE_NAME,
+    locale: process.env.NEXT_PUBLIC_LOCALE,
     type: "website",
     images: [
       {
-        url: "logo1.png",
+        url: process.env.NEXT_PUBLIC_OPEN_GRAPH_IMAGE_URL,
         width: 70,
         height: 32,
-        alt: "루디움",
+        alt: process.env.NEXT_PUBLIC_SITE_NAME,
       },
     ],
   },

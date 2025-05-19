@@ -7,21 +7,21 @@ export const metadata = {
   metadataBase: process.env.NEXT_PUBLIC_SITE_MAP_URL,
   title: "커뮤니티 게시판",
   description:
-    "웹 3.0 기반 커뮤니티에서 평등한 소통과 창조적 교류를 추구하는 모든 이의 공간. 공지, 콘텐츠, 자유 질문 게시판 이용 가능.",
+    "커뮤니티에서 평등한 소통과 창조적 교류를 추구하는 모든 이의 공간. 공지, 콘텐츠, 자유 질문 게시판 이용 가능.",
   openGraph: {
     title: "커뮤니티 게시판",
     description:
-      "웹 3.0 기반 커뮤니티에서 평등한 소통과 창조적 교류를 추구하는 모든 이의 공간. 공지, 콘텐츠, 자유 질문 게시판 이용 가능.",
+      "커뮤니티에서 평등한 소통과 창조적 교류를 추구하는 모든 이의 공간. 공지, 콘텐츠, 자유 질문 게시판 이용 가능.",
     url: process.env.NEXT_PUBLIC_SITE_MAP_URL,
-    siteName: "루디움",
-    locale: "ko_KR",
+    siteName: process.env.NEXT_PUBLIC_SITE_NAME,
+    locale: process.env.NEXT_PUBLIC_LOCALE,
     type: "website",
     images: [
       {
-        url: "logo1.png",
+        url: process.env.NEXT_PUBLIC_OPEN_GRAPH_IMAGE_URL,
         width: 70,
         height: 32,
-        alt: "루디움",
+        alt: process.env.NEXT_PUBLIC_SITE_NAME,
       },
     ],
   },

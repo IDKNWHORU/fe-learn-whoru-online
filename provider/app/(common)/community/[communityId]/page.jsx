@@ -36,7 +36,7 @@ export async function generateMetadata({ params: { communityId } }) {
         .replaceAll("*", "")
         .substring(0, 80),
       url: `${process.env.NEXT_PUBLIC_SITE_MAP_URL}/community${communityId}`,
-      siteName: "루디움",
+      siteName: process.env.NEXT_PUBLIC_SITE_NAME,
       locale: "ko_KR",
       type: "website",
       images: [
@@ -44,7 +44,7 @@ export async function generateMetadata({ params: { communityId } }) {
           url: "/logo1.png",
           width: 70,
           height: 32,
-          alt: "루디움",
+          alt: process.env.NEXT_PUBLIC_SITE_NAME,
         },
       ],
     },
